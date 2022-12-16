@@ -1,58 +1,33 @@
-(define (domain fridge-domain)
+(define (domain domain1-domain)
   (:requirements :strips :typing)
-  (:types screw backplane compressor fridge)
-  (:predicates (screwed ?s - screw)
-	       (attached ?c - compressor ?f - fridge)
-               (fits ?s - screw ?c - compressor)
-	       (fridge-on ?f - fridge))
+  (:types 
+    person 
+    robot 
+    crane
+    box 
+    location 
+    item
+    )
+  
+  (:predicates 
+    
+    (is-empty ?b - box) ;; box b is empty
+    (is-full ?b - box) ;; box b is full
+    (in ?b - box ?l - location) ;; box b is at location l 
+    (empy ?c - crane) ;; crane c is empty
+    (holding_box ?c - crane ?b - box) ;; crane c holds box b
+    (holding_item ?c - crane ?i - item) ;; crane c holds item i
+    (is_food ?i - item) ;; item i is food
+    (is_medicine ?i - item) ;; item i is medicine
+    (is_tools ?i - item) ;; item i is tools
+    (need_food ?p - person) ;; person p need food
+    (need_medicine ?p - person) ;; person p need medicine
+    (need_tool ?p - person) ;; person p need tool
+  
+  )
+
+    ) 
 
   
-  (:action fasten
-	   :parameters (?x - screw)
-	   :precondition (not (screwed ?x))
-	   :effect (screwed ?x))
+  )
   
-  (:action unfasten
-	   :parameters (?x - screw)
-	   :precondition (and (exists (?f - fridge)
-                                      (exists (?c - compressor)
-					      (and (attached ?c ?f) 
-						   (fits ?x ?c)
-						   (not (fridge-on ?f)))))
-                              (screwed ?x))
-	   :effect (not (screwed ?x)))
-  
-  (:action start-fridge
-	   :parameters (?f - fridge)
-	   :precondition 
-           (and (exists (?c - compressor) 
-			(and (attached ?c ?f)
-                             (forall (?a - screw)
-				     (imply (fits ?a ?c) (screwed ?a)))))
-                (not (fridge-on ?f)))
-	   :effect (fridge-on ?f))
-  
-  (:action stop-fridge
-	   :parameters (?f - fridge)
-	   :precondition (fridge-on ?f)
-	   :effect
-	   (not (fridge-on ?f)))
-  
-  (:action remove-compressor
-	   :parameters (?x - compressor ?f - fridge)
-	   :precondition 
-           (and (not (fridge-on ?f))
-                (attached ?x ?f)
-                (forall (?a - screw) 
-			(imply (fits ?a ?x) (not (screwed ?a)))))
-           :effect (not (attached ?x ?f)))
-
-  (:action attach-compressor
-	   :parameters (?x - compressor ?f - fridge)
-	   :precondition 
-           (and (not (fridge-on ?f))
-                (forall (?y - compressor) 
-			(not (attached ?y ?f)))
-                (forall (?a - screw) 
-			(imply (fits ?a ?x) (not (screwed ?a)))))
-           :effect (attached ?x ?f)))
