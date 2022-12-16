@@ -1,4 +1,4 @@
-(define (domain domain1-domain)
+(define (domain domain1)
     (:requirements :strips :typing)
     (:types 
         person 
@@ -22,7 +22,7 @@
         (holding_item ?c - crane ?i - item) ;; crane c holds item i
         (is_food ?i - item) ;; item i is food
         (is_medicine ?i - item) ;; item i is medicine
-        (is_tools ?i - item) ;; item i is tools
+        (is_tool ?i - item) ;; item i is tools
         (need_food ?p - person) ;; person p need food
         (need_medicine ?p - person) ;; person p need medicine
         (need_tool ?p - person) ;; person p need tool
@@ -35,7 +35,7 @@
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
             )
-    )
+    
 
     (:action pickup_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location)
@@ -68,8 +68,9 @@
                         (inside ?i ?b)
                     )
       :effect (and  (not(need_food ?p))
-                    (not(inside ?i ?b)
-                    )
+                    (not(inside ?i ?b))
+	   				) 
+      
     )
 
     (:action pickdown_tool
@@ -86,8 +87,8 @@
       :effect (and  (not(need_tool ?p))
                     (not(inside ?i ?b)
                     )
-    )
-
+    				)
+	)
     (:action pickdown_medicine
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot ?p - person)
       :precondition (and 
@@ -102,4 +103,6 @@
       :effect (and  (not(need_medicine?p))
                     (not(inside ?i ?b)
                     )
-    )
+    				)
+	)
+)

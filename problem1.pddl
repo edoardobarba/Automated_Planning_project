@@ -1,4 +1,4 @@
-(define (problem problem1) (:domain domain1)
+(define (problem problem_example) (:domain domain1)
 (:objects 
     r1 - robot
     c1 - crane
@@ -27,9 +27,11 @@
     (is_empty_c c1)
 )
 
-(:goal ( (not(need_food p1)))
+(:goal  (not(need_food p1))
+
+)
+)
 ;; planutils run downward "--alias lama-first domain1.pddl problem1.pddl"
-;; remove the ;; if you donot need it 
+;; remove the "" if you donot need it 
 ;un-comment the following line if metric is needed
 ;(:metric minimize (???))
-)
