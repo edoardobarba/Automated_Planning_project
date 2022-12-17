@@ -19,7 +19,7 @@
         (inside ?i - item ?b - box)   ;; item i is inside box b
         (is_empty_c ?c - crane) ;; crane c is empty
         (holding_box ?c - crane ?b - box) ;; crane c holds box b
-        (holding_item ?c - crane ?i - item) ;; crane c holds item i
+        (holding_item ?c - crane ?i - item)
         (is_food ?i - item) ;; item i is food
         (is_medicine ?i - item) ;; item i is medicine
         (is_tool ?i - item) ;; item i is tools
@@ -28,19 +28,24 @@
         (need_tool ?p - person) ;; person p need tool
     )
 
-
-    (:action move_robot 
-      :parameters (?r - robot ?from ?to - location)
-      :precondition (at_r ?r ?from) 
+    (:action move_robot_with_box 
+      :parameters (?r - robot ?from ?to - location ?c - crane ?b - box)
+      :precondition (and (at_r ?r ?from) (holding_box ?c ?b))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
             )
-    
+
+    (:action move_robot_without_box
+      :parameters (?r - robot ?from ?to - location ?c - crane)
+      :precondition (and (at_r ?r ?from) (is_empty_c ?c))
+      :effect (and (at_r ?r ?to)
+                (not (at_r ?r ?from)))
+            )
 
     (:action pickup_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location)
       :precondition (and (at_r ?r ?l) (at_b ?b ?l) (is_empty_c ?c))
-      :effect (and (holding_box ?c ?b) (not (is_empty_c ?c)))
+      :effect (and (holding_box ?c ?b) (not (is_empty_c ?c)) (not(at_b ?b ?l)))
     )
 
     (:action pickdown_box
@@ -50,59 +55,69 @@
     )
     
 
-    (:action pickup_item
-      :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
-      :precondition (and (at_b ?b ?l) (at_r ?r ?l) (at_i ?i ?l) (is_empty_c ?c))
-      :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (not(is_empty_c ?c) ))
+    (:action pickup_item_from_location
+      :parameters (?i - item ?l - location ?c - crane ?r - robot)
+      :precondition (and (at_r ?r ?l) (at_i ?i ?l) (is_empty_c ?c))
+      :effect (and (not(at_i ?i ?l)) (not (is_empty_c ?c)) (holding_item ?c ?i))
     )
 
+    (:action put_item_in_box
+      :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
+      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l))
+      :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (is_empty_c ?c) (not(holding_item ?c ?i)))
+    )
+
+
+    (:action pick_item_from_box
+      :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
+      :precondition (and (at_b ?b ?l) (at_r ?r ?l) (is_empty_c ?c) (inside ?i ?b))
+      :effect (and (holding_item ?c ?i) (not (inside ?i ?b)) (not(is_empty_c ?c)))
+    )
+
+
     (:action pickdown_food
-      :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot ?p - person)
+      :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :precondition (and 
                         (need_food ?p) 
                         (is_food ?i)
                         (at_p ?p ?l)
                         (at_r ?r ?l)
-                        (at_b ?b ?l)
-                        (is_empty_c ?c)
-                        (inside ?i ?b)
+                        (holding_item ?c ?i)
                     )
       :effect (and  (not(need_food ?p))
-                    (not(inside ?i ?b))
+                    (is_empty_c ?c)
+                    (not(holding_item ?c ?i)))
 	   				) 
       
-    )
+    
 
     (:action pickdown_tool
-      :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot ?p - person)
+      :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :precondition (and 
                         (need_tool ?p) 
                         (is_tool ?i)
                         (at_p ?p ?l)
                         (at_r ?r ?l)
-                        (at_b ?b ?l)
-                        (is_empty_c ?c)
-                        (inside ?i ?b)
+                        (holding_item ?c ?i)
                     )
       :effect (and  (not(need_tool ?p))
-                    (not(inside ?i ?b)
-                    )
-    				)
+                    (is_empty_c ?c)
+                    (not(holding_item ?c ?i))
+	   				) 
+      
 	)
     (:action pickdown_medicine
-      :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot ?p - person)
+      :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :precondition (and 
                         (need_medicine ?p) 
                         (is_medicine ?i)
                         (at_p ?p ?l)
                         (at_r ?r ?l)
-                        (at_b ?b ?l)
-                        (is_empty_c ?c)
-                        (inside ?i ?b)
+                        (holding_item ?c ?i)
                     )
-      :effect (and  (not(need_medicine?p))
-                    (not(inside ?i ?b)
-                    )
-    				)
-	)
+      :effect (and  (not(need_medicine ?p))
+                    (is_empty_c ?c)
+                    (not(holding_item ?c ?i))
+	   				) 
+)
 )
