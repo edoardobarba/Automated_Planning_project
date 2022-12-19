@@ -88,8 +88,7 @@
                     (is_empty_c ?c)
                     (not(holding_item ?c ?i)))
 	   				) 
-      
-    
+  
 
     (:action pickdown_tool
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
