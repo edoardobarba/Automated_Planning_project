@@ -19,8 +19,8 @@
 )
 
 (:init
-    (= (box_count) 0)
-    (= (max_capacity) 1)
+    ;(= (box_count) 0)
+    ;(= (max_capacity) 1)
     (belongs_crane c1 r1)
     (belongs_carrier a1 r1)
     (at_r r1 l1)

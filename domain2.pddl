@@ -1,5 +1,5 @@
 (define (domain domain2)
-    (:requirements :strips :typing :fluents)
+    (:requirements :strips :typing :fluents :negative-preconditions)
     (:types 
         person 
         robot 
@@ -10,11 +10,11 @@
         carrier
     )
 
-    (:functions 
-      (max_capacity) ;max capacity of carrier
-      (box_count) ;number of boxes on the carrier c
+    ; (:functions 
+    ;  (max_capacity) ;max capacity of carrier
+    ;  (box_count) ;number of boxes on the carrier c
     
-    )
+    ;)
     (:predicates 
         
         (is_truck ?r - r) ;; robot r is a truck
@@ -48,14 +48,14 @@
     ;; TODO capacity of carrier
     (:action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
-      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (<= (box_count) (max_capacity)))
-      :effect (and (not(at_b ?b ?l)) (on ?b ?a) (increase (box_count) 1))
+      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) ) ;(<= (box_count) (max_capacity))
+      :effect (and (not(at_b ?b ?l)) (on ?b ?a) ) ;(increase (box_count) 1)
     )
 
     (:action unload_box
         :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier)
         :precondition (and (at_r ?r ?l) (on ?b ?a) (belongs_carrier ?a ?r) (belongs_crane ?c ?r) (is_empty_c ?c))
-        :effect (and (not (on ?b ?a)) (at_b ?b ?l) (decrease (box_count) 1))
+        :effect (and (not (on ?b ?a)) (at_b ?b ?l) ) ;(decrease (box_count) 1)
     )
 
     (:action pickup_item_from_location
