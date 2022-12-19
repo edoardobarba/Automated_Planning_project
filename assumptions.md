@@ -2,3 +2,8 @@ Assumptions
     -the boxes have a capacity --> 10 objects
     -in order to put down an object, the robot has to put down the box
     -the robot can contain only one box at a time
+
+
+planutils run lama "domain2.pddl problem2.pddl"
+;; planutils run downward "--alias lama-first domain1.pddl problem1.pddl"
+;; remove the "" if you donot need it 

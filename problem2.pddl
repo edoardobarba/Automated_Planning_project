@@ -13,7 +13,6 @@
     i6 - item
     b1 - box
     b2 - box
-    b3 - box
     l1 - location 
     l2 - location 
     l3 - location   
@@ -25,7 +24,6 @@
     (at_r r1 l1)
     (at_b b1 l1)
     (at_b b2 l1)
-    (at_b b3 l1)
     (at_i i1 l1)
     (at_i i2 l1)
     (at_i i3 l1)
@@ -33,7 +31,7 @@
     (at_i i5 l1)
     (at_i i6 l1)
     (at_p p1 l2)
-    (at_p p2 l3)
+    (at_p p2 l2)
     (is_food i1)
     (is_medicine i2)
     (is_tool i3)
