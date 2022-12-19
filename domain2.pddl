@@ -12,11 +12,11 @@
 
     (:predicates 
         
-        (is_truck ?r -r) ;; robot r is a truck
+        (is_truck ?r - r) ;; robot r is a truck
         (is_helicopter ?r - r) ;; robot r is an helicopter   
-        (belongs_carrier ?c - carrier ?r - robot)   ;; carrier c belongs to robot r
+        (belongs_carrier ?a - carrier ?r - robot)   ;; carrier c belongs to robot r
         (belongs_crane ?c - crane ?r - robot)   ;; crane c belongs to robot r
-        (on ?b - box ?c - carrier)  ;; box b is on carrier c
+        (on ?b - box ?a - carrier)  ;; box b is on carrier c
         (at_b ?b - box ?l - location) ;; box b is at location l 
         (at_p ?p - person ?l - location) ;; person p is at location l
         (at_r ?r - robot ?l - location) ;; robot r is at location l
@@ -33,14 +33,7 @@
         (need_tool ?p - person) ;; person p need tool
     )
 
-    (:action move_robot_with_box 
-      :parameters (?r - robot ?from ?to - location ?c - crane ?b - box)
-      :precondition (and (at_r ?r ?from) (holding_box ?c ?b))
-      :effect (and (at_r ?r ?to)
-                (not (at_r ?r ?from)))
-            )
-
-    (:action move_robot_without_box
+    (:action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
       :precondition (and (at_r ?r ?from) (is_empty_c ?c))
       :effect (and (at_r ?r ?to)
@@ -56,8 +49,8 @@
 
     (:action unload_box
         :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier)
-        :precondition (and (at_r ?r ?l) (on ?b ?a) (belongs_carrier ?c ?r) (belongs_crane ?c ?r) (is_empty_c ?c))
-        :effect (and (not (on ?b ?c)) (at_b ?b ?l))
+        :precondition (and (at_r ?r ?l) (on ?b ?a) (belongs_carrier ?a ?r) (belongs_crane ?c ?r) (is_empty_c ?c))
+        :effect (and (not (on ?b ?a)) (at_b ?b ?l))
     )
 
     (:action pickup_item_from_location
