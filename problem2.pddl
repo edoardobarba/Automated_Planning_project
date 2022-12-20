@@ -16,6 +16,7 @@
     i6 - item
     b1 - box
     b2 - box
+    b3 - box
     l1 - location 
     l2 - location 
     l3 - location   
@@ -23,7 +24,12 @@
 
 (:init
     (= (box_count a1) 0)
-    (= (max_capacity) 2)
+    (= (box_count a2) 0)
+    (= (max_capacity_carrier) 2)
+    (= (item_count b1) 0)
+    (= (item_count b2) 0)
+    (= (item_count b3) 0)
+    (= (max_capacity_box) 2) 
     (belongs_crane c1 r1)
     (belongs_crane c2 r2)
     (belongs_carrier a1 r1)
@@ -32,6 +38,7 @@
     (at_r r2 l1)
     (at_b b1 l1)
     (at_b b2 l1)
+    (at_b b3 l1)
     (at_i i1 l1)
     (at_i i2 l1)
     (at_i i3 l1)
@@ -53,6 +60,7 @@
     (need_medicine p2)
     (need_tool p2)
     (is_empty_c c1)
+    (is_empty_c c2)
 )
 
 (:goal  (and
