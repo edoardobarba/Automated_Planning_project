@@ -1,8 +1,11 @@
 (define (problem problem2_example) (:domain domain2)
 (:objects 
     r1 - robot
+    r2 - robot
     c1 - crane
+    c2 - crane
     a1 - carrier
+    a2 - carrier
     p1 - person
     p2 - person
     i1 - item
@@ -19,11 +22,14 @@
 )
 
 (:init
-    ;(= (box_count) 0)
-    ;(= (max_capacity) 1)
+    (= (box_count a1) 0)
+    (= (max_capacity) 2)
     (belongs_crane c1 r1)
+    (belongs_crane c2 r2)
     (belongs_carrier a1 r1)
+    (belongs_carrier a2 r2)
     (at_r r1 l1)
+    (at_r r2 l1)
     (at_b b1 l1)
     (at_b b2 l1)
     (at_i i1 l1)
@@ -33,7 +39,7 @@
     (at_i i5 l1)
     (at_i i6 l1)
     (at_p p1 l2)
-    (at_p p2 l2)
+    (at_p p2 l3)
     (is_food i1)
     (is_medicine i2)
     (is_tool i3)

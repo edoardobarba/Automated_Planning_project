@@ -1,5 +1,5 @@
 (define (domain domain2)
-    (:requirements :strips :typing :fluents :negative-preconditions)
+    (:requirements :strips :typing :numeric-fluents :negative-preconditions)
     (:types 
         person 
         robot 
@@ -10,11 +10,6 @@
         carrier
     )
 
-    ; (:functions 
-    ;  (max_capacity) ;max capacity of carrier
-    ;  (box_count) ;number of boxes on the carrier c
-    
-    ;)
     (:predicates 
         
         (is_truck ?r - r) ;; robot r is a truck
@@ -38,9 +33,14 @@
         (need_tool ?p - person) ;; person p need tool
     )
 
+    (:functions 
+      (max_capacity) ;max capacity of carrier
+      (box_count ?c - carrier) ;number of boxes on the carrier c
+    )
+
     (:action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
-      :precondition (and (at_r ?r ?from) (is_empty_c ?c))
+      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
             )
@@ -48,31 +48,31 @@
     ;; TODO capacity of carrier
     (:action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
-      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) ) ;(<= (box_count) (max_capacity))
-      :effect (and (not(at_b ?b ?l)) (on ?b ?a) ) ;(increase (box_count) 1)
+      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (<= (box_count ?a) (max_capacity))) 
+      :effect (and (not(at_b ?b ?l)) (on ?b ?a) (increase (box_count ?a) 1))
     )
 
     (:action unload_box
         :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier)
         :precondition (and (at_r ?r ?l) (on ?b ?a) (belongs_carrier ?a ?r) (belongs_crane ?c ?r) (is_empty_c ?c))
-        :effect (and (not (on ?b ?a)) (at_b ?b ?l) ) ;(decrease (box_count) 1)
+        :effect (and (not (on ?b ?a)) (at_b ?b ?l) (decrease (box_count ?a) 1))
     )
 
     (:action pickup_item_from_location
       :parameters (?i - item ?l - location ?c - crane ?r - robot)
-      :precondition (and (at_r ?r ?l) (at_i ?i ?l) (is_empty_c ?c))
+      :precondition (and (at_r ?r ?l) (at_i ?i ?l) (is_empty_c ?c) (belongs_crane ?c ?r))
       :effect (and (not(at_i ?i ?l)) (not (is_empty_c ?c)) (holding_item ?c ?i))
     )
 
     (:action put_item_in_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
-      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l))
+      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l) (belongs_crane ?c ?r))
       :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (is_empty_c ?c) (not(holding_item ?c ?i)))
     )
 
     (:action pick_item_from_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
-      :precondition (and (at_b ?b ?l) (at_r ?r ?l) (is_empty_c ?c) (inside ?i ?b))
+      :precondition (and (at_b ?b ?l) (at_r ?r ?l) (is_empty_c ?c) (inside ?i ?b) (belongs_crane ?c ?r))
       :effect (and (holding_item ?c ?i) (not (inside ?i ?b)) (not(is_empty_c ?c)))
     )
 
@@ -84,6 +84,7 @@
                         (at_p ?p ?l)
                         (at_r ?r ?l)
                         (holding_item ?c ?i)
+                        (belongs_crane ?c ?r)
                     )
       :effect (and  (not(need_food ?p))
                     (is_empty_c ?c)
@@ -98,6 +99,7 @@
                         (at_p ?p ?l)
                         (at_r ?r ?l)
                         (holding_item ?c ?i)
+                        (belongs_crane ?c ?r)
                     )
       :effect (and  (not(need_tool ?p))
                     (is_empty_c ?c)
@@ -114,6 +116,7 @@
                         (at_p ?p ?l)
                         (at_r ?r ?l)
                         (holding_item ?c ?i)
+                        (belongs_crane ?c ?r)
                     )
       :effect (and  (not(need_medicine ?p))
                     (is_empty_c ?c)

@@ -7,3 +7,10 @@ Assumptions
 planutils run lama "domain2.pddl problem2.pddl"
 ;; planutils run downward "--alias lama-first domain1.pddl problem1.pddl"
 ;; remove the "" if you donot need it 
+
+
+
+
+https://sites.google.com/view/enhsp/home/how-to-use-it?authuser=0
+
+java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner opt-hlm
