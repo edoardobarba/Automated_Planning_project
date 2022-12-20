@@ -14,3 +14,6 @@ planutils run lama "domain2.pddl problem2.pddl"
 https://sites.google.com/view/enhsp/home/how-to-use-it?authuser=0
 
 java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner opt-hlm
+
+BEST PLANNER EVER
+java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner opt-hmax
