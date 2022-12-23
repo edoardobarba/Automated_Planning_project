@@ -17,3 +17,6 @@ java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner o
 
 BEST PLANNER EVER
 java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner opt-hmax
+
+For pandas command 
+java -jar PANDA.jar -parser hddl domain3.hddl problem3.hddl 
