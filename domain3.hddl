@@ -12,8 +12,8 @@
 	
 	 (:predicates 
         
-        (is_truck ?r - r) ;; robot r is a truck
-        (is_helicopter ?r - r) ;; robot r is an helicopter   
+        ; (is_truck ?r - r) ;; robot r is a truck
+        ; (is_helicopter ?r - r) ;; robot r is an helicopter   
         (belongs_carrier ?a - carrier ?r - robot)   ;; carrier c belongs to robot r
         (belongs_crane ?c - crane ?r - robot)   ;; crane c belongs to robot r
         (on ?b - box ?a - carrier)  ;; box b is on carrier c
@@ -49,6 +49,31 @@
 		:precondition ()
 		:effect ()
 	)
+  (:task pick_up_item_from_location
+		:parameters (?r - robot ?l - location)
+		:precondition ()
+		:effect ()
+	)
+  (:task put_down_item_in_box
+		:parameters (?r - robot ?b - box)
+		:precondition ()
+		:effect ()
+	)
+  (:task put_down_food
+		:parameters (?r - robot ?i - item)
+		:precondition ()
+		:effect ()
+	)
+  (:task put_down_tool
+		:parameters (?r - robot ?i - item)
+		:precondition ()
+		:effect ()
+	)
+  (:task put_down_medicine
+		:parameters (?r - robot ?i - item)
+		:precondition ()
+		:effect ()
+	)
   (:task load_box_on_robot
 		:parameters (?r - robot ?b - box)
 		:precondition ()
@@ -60,20 +85,70 @@
 		:effect ()
 	)
 	(:method m_deliver_box
-		:parameters (?b - box ?l1 - location ?l2 - location ?r - robot ?c - crane ?a - carrier)
+		:parameters (?b - box ?l1 - location ?l2 - location ?r - robot)
 		:task (deliver_box ?b ?l1 ?l2)
 		:subtasks (and
-		 (task0 (goto ?r?l1)); so we go to method 
-		 (task1 (load_box_on_robot ?r ?l1 ?b)); so we go to method
-		 (task2 (goto ?r?l2)); so we go to method 
-		 (task3 (unload_box_on_robot ?r ?l2 ?b))
+		 (task0 (goto ?r ?l1)); so we go to method 
+		 (task1 (load_box_on_robot ?r ?b)); so we go to method
+		 (task2 (goto ?r ?l2)); so we go to method 
+		 (task3 (unload_box_on_robot ?r ?b))
 		)
 		:ordering (and
 			(task0 < task1)
 			(task1 < task2)
 			(task2 < task3)
 		)
-	)	
+	)
+	(:method m_goto_location
+		:parameters (?r - robot ?from ?to - location ?c - crane)
+		:task (goto ?r ?to)
+		:subtasks (and
+		 (task0 (move_robot ?r ?from ?to ?c)); so we go to method 
+		)
+	)
+	(:method m_goto_I_am_at_location
+		:parameters (?r - robot ?l - location)
+		:task (goto ?r ?l)
+		:subtasks (and
+		 (task0 (noop ?r ?l)); so we go to method 
+		)
+	)
+(:method m_pick_up_item_from_location
+		:parameters (?i - item ?l - location ?c - crane ?r - robot)
+		:task (pick_up_item_from_location  ?r ?l )
+		:subtasks (and
+		 (task0 (pickup_item_from_location ?i ?l ?c ?r ))
+		)
+	)
+
+(:method m_put_down_item_in_box
+		:parameters (?i - item ?l - location ?c - crane ?r - robot ?b - box)
+		:task (put_down_item_in_box ?r ?b)
+		:subtasks (and
+		 (task0 (put_item_in_box ?i ?b ?l  ?c  ?r ))
+		)
+	)
+(:method m_put_down_food
+		:parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
+		:task (put_down_food ?r ?i)
+		:subtasks (and
+		 (task0 (pickdown_food ?i ?l  ?c  ?r  ?p ))
+		)
+	)
+(:method m_put_down_tool
+		:parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
+		:task (put_down_tool ?r ?i)
+		:subtasks (and
+		 (task0 (pickdown_tool ?i ?l  ?c  ?r  ?p ))
+		)
+	)
+(:method m_put_down_medicine
+		:parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
+		:task (put_down_medicine ?r ?i)
+		:subtasks (and
+		 (task0 (pickdown_medicine ?i ?l  ?c  ?r  ?p ))
+		)
+	)
 (:method m_load_box
 		:parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
 		:task (load_box_on_robot ?r ?l ?b)
@@ -98,7 +173,7 @@
     ;; TODO capacity of carrier
     (:action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
-      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (< (box_count ?a) (max_capacity_carrier))) 
+      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) );;(< (box_count ?a) (max_capacity_carrier))) 
       :effect (and (not(at_b ?b ?l)) (on ?b ?a) (increase (box_count ?a) 1))
     )
 
@@ -116,7 +191,7 @@
 
     (:action put_item_in_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
-      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l) (belongs_crane ?c ?r) (< (item_count ?b) (max_capacity_box)))
+      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l) (belongs_crane ?c ?r) );(< (item_count ?b) (max_capacity_box)))
       :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (is_empty_c ?c) (not(holding_item ?c ?i)) (increase (item_count ?b) 1))
     )
 
@@ -173,4 +248,12 @@
                     (not(holding_item ?c ?i))
 	   				) 
 )
+(:action noop
+		:parameters (?r - robot ?l - location)
+		:precondition
+			(and
+				(at_r ?r ?l)
+			)
+		:effect ()
+	)
 )
