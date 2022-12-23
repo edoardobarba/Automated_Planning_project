@@ -117,14 +117,14 @@
   ;; methods to load box and unload box
     (:method m_load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
-      :task (load_box_on_robot ?r ?l ?b)
+      :task (load_box_on_robot ?r ?b)
       :subtasks (and
       (task0 (load_box ?b ?r ?c ?l ?a ))
       )
     )
     (:method m_unload_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
-      :task (unload_box_on_robot ?r ?l ?b)
+      :task (unload_box_on_robot ?r ?b)
       :subtasks (and
       (task0 (unload_box ?b ?r ?c ?l ?a ))
       )
@@ -159,6 +159,7 @@
       :subtasks (and
       (task0 (put_item_in_box ?i ?b ?l  ?c  ?r ));; I am putting the item in the box
       )
+  )
   ;;;; method to pick up item from the box show edoaro tommorow
   (:method m_pick_item_from_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
@@ -194,7 +195,7 @@
       :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
-            )
+    )
 
     ;; TODO capacity of carrier
   (:action load_box
