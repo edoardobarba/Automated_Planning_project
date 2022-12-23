@@ -1,13 +1,13 @@
 (define (domain domain3)
     (:requirements :strips :typing :hierachie :numeric-fluents :negative-preconditions)
     (:types 
-        person 
-        robot 
-        crane
-        box 
-        location 
-        item
-        carrier
+        person - object
+        robot - object
+        crane - object
+        box - object
+        location - object
+        item - object
+        carrier - object
     )
 	
 	 (:predicates 
@@ -132,7 +132,7 @@
   ;; methods to move to a specific location
 
     (:method m_goto_location
-      :parameters (?r - robot ?from ?to - location ?c - crane)
+      :parameters (?r - robot ?from - location ?to - location ?c - crane)
       :task (goto ?r ?to)
       :subtasks (and
       (task0 (move_robot ?r ?from ?to ?c)); Move teh robot from location from to 
@@ -157,7 +157,7 @@
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?b - box)
       :task (put_down_item_in_box ?r ?b)
       :subtasks (and
-      (task0 (put_item_in_box ?i ?b ?l  ?c  ?r ));; I am putting the item in the box
+      (task0 (put_item_in_box ?i ?b ?l ?c  ?r ));; I am putting the item in the box
       )
   )
   ;;;; method to pick up item from the box show edoaro tommorow

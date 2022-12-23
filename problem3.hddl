@@ -26,7 +26,7 @@
 	(:htn
 		:parameters ()
 		:subtasks (and
-		 (task0 (deliver_box box l1 l2))
+		 (task0 (deliver_box b1 l1 l2))
 		)
 	)
 	(:init
