@@ -20,3 +20,16 @@ java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner o
 
 For pandas command 
 java -jar PANDA.jar -parser hddl domain3.hddl problem3.hddl 
+
+for problem 4 command 
+planutils run optic "-N  domain4.pddl problem4.pddl"
+
+move_robot 15 seconds
+load_box 5 seconds 
+unload_box 5 seconds
+pickup_item_from_location 3 seconds
+put_item_in_box 3 seconds
+pick_item_from_box 3 seconds
+pickdown_food 3 seconds
+pickdown_tool 3 seconds
+pickdown_medicine 3 seconds
