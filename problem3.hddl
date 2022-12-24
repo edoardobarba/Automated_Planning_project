@@ -27,7 +27,7 @@
 		:parameters ()
 		:subtasks (and
 		;(task0 (deliver_box b1 l1 l2))
-        (task0 (deliver_food r1 i1 p1) (deliver_tool r1 i3 p1) )
+        (task0 (deliver_food r1 p1) (deliver_tool r1 p1) )
         ;(task0 (catch_item_put_in_box b1 i1))
         )
 	)

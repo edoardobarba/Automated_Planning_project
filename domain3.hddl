@@ -53,17 +53,17 @@
       :effect ()
     )
     (:task deliver_food
-      :parameters (?r - robot ?i - item ?p - person)
+      :parameters (?r - robot  ?p - person)
       :precondition ()
       :effect ()
     )    
     (:task deliver_tool
-      :parameters (?r - robot ?i - item ?p - person)
+      :parameters (?r - robot ?p - person)
       :precondition ()
       :effect ()
     )    
     (:task deliver_medicine
-      :parameters (?r - robot ?i - item ?p - person)
+      :parameters (?r - robot ?p - person)
       :precondition ()
       :effect ()
     )    
@@ -151,7 +151,7 @@
     
     (:method m_deliver_food
       :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
-      :task (deliver_food ?r ?i ?p)
+      :task (deliver_food ?r ?p)
       :subtasks (and
       (task0 (catch_item_put_in_box ?b ?i))
       (task1 ( deliver_box ?b ?l1 ?l2))
@@ -166,7 +166,7 @@
     )
     (:method m_deliver_tool
       :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
-      :task (deliver_tool ?r ?i ?p)
+      :task (deliver_tool ?r ?p)
       :subtasks (and
       (task0 (catch_item_put_in_box ?b ?i))
       (task1 ( deliver_box ?b ?l1 ?l2))
@@ -181,7 +181,7 @@
     )
     (:method m_deliver_medicine
       :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
-      :task (deliver_medicine ?r ?i ?p)
+      :task (deliver_medicine ?r ?p)
       :subtasks (and
       (task0 (catch_item_put_in_box ?b ?i))
       (task1 ( deliver_box ?b ?l1 ?l2))
