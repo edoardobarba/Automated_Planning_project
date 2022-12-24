@@ -1,5 +1,5 @@
 (define (domain domain3)
-    (:requirements :strips :typing :hierachie :numeric-fluents :negative-preconditions)
+    (:requirements :strips :typing :hierachie :negative-preconditions)
     (:types 
         person - object
         robot - object
@@ -53,7 +53,17 @@
       :effect ()
     )
     (:task deliver_food
-      :parameters (?r - robot ?i - item)
+      :parameters (?r - robot ?i - item ?p - person)
+      :precondition ()
+      :effect ()
+    )    
+    (:task deliver_tool
+      :parameters (?r - robot ?i - item ?p - person)
+      :precondition ()
+      :effect ()
+    )    
+    (:task deliver_medicine
+      :parameters (?r - robot ?i - item ?p - person)
       :precondition ()
       :effect ()
     )    
@@ -94,17 +104,17 @@
     )
     ;;; tasks to give a person a specific object
     (:task put_down_food
-      :parameters (?r - robot ?i - item)
+      :parameters (?r - robot ?i - item ?p - person)
       :precondition ()
       :effect ()
     )
     (:task put_down_tool
-      :parameters (?r - robot ?i - item)
+      :parameters (?r - robot ?i - item ?p - person)
       :precondition ()
       :effect ()
     )
     (:task put_down_medicine
-      :parameters (?r - robot ?i - item)
+      :parameters (?r - robot ?i - item ?p - person)
       :precondition ()
       :effect ()
     )
@@ -126,25 +136,57 @@
       )
     )
     (:method m_catch_item_put_in_box
-      :parameters (?b - box ?l1 - location ?r - robot)
+      :parameters (?b - box ?l1 - location ?r - robot ?i - item)
       :task (catch_item_put_in_box ?b ?i)
       :subtasks (and
-      (task0 (pick_up_item_from_location ?r ?l1))
-      (task1 (put_down_item_in_box ?r ?b))
+      (task0 (goto ?r ?l1)); so we do task goto to location 1
+      (task1 (pick_up_item_from_location ?r ?l1))
+      (task2 (put_down_item_in_box ?r ?b))
       )
       :ordering (and
         (task0 < task1)
+        (task1 < task2)
       )
     )
     
     (:method m_deliver_food
-      :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot)
-      :task (deliver_food ?r ?i)
+      :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
+      :task (deliver_food ?r ?i ?p)
       :subtasks (and
       (task0 (catch_item_put_in_box ?b ?i))
       (task1 ( deliver_box ?b ?l1 ?l2))
       (task2 (pick_up_item_from_box ?r ?b) )
-      (task3 (put_down_food ?r ?i) )
+      (task3 (put_down_food ?r ?i ?p) )
+      )
+      :ordering (and
+        (task0 < task1)
+        (task1 < task2)
+        (task2 < task3)
+      )
+    )
+    (:method m_deliver_tool
+      :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
+      :task (deliver_tool ?r ?i ?p)
+      :subtasks (and
+      (task0 (catch_item_put_in_box ?b ?i))
+      (task1 ( deliver_box ?b ?l1 ?l2))
+      (task2 (pick_up_item_from_box ?r ?b) )
+      (task3 (put_down_tool ?r ?i ?p) )
+      )
+      :ordering (and
+        (task0 < task1)
+        (task1 < task2)
+        (task2 < task3)
+      )
+    )
+    (:method m_deliver_medicine
+      :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
+      :task (deliver_medicine ?r ?i ?p)
+      :subtasks (and
+      (task0 (catch_item_put_in_box ?b ?i))
+      (task1 ( deliver_box ?b ?l1 ?l2))
+      (task2 (pick_up_item_from_box ?r ?b) )
+      (task3 (put_down_medicine ?r ?i ?p) )
       )
       :ordering (and
         (task0 < task1)
@@ -210,33 +252,33 @@
   ;; methods to put specific items to a person 
   (:method m_put_down_food
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
-      :task (put_down_food ?r ?i)
+      :task (put_down_food ?r ?i ?p)
       :subtasks (and
       (task0 (pickdown_food ?i ?l  ?c  ?r  ?p ))
       )
     )
   (:method m_put_down_tool
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
-      :task (put_down_tool ?r ?i)
+      :task (put_down_tool ?r ?i ?p)
       :subtasks (and
       (task0 (pickdown_tool ?i ?l  ?c  ?r  ?p ))
       )
     )
   (:method m_put_down_medicine
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
-      :task (put_down_medicine ?r ?i)
+      :task (put_down_medicine ?r ?i ?p)
       :subtasks (and
       (task0 (pickdown_medicine ?i ?l  ?c  ?r  ?p ))
       )
     )
+  ;; TODO add in other files the last condition that robot is not at to
   (:action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
-      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r))
+      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r)(not (at_r ?r ?to)))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
     )
 
-    ;; TODO capacity of carrier
   (:action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
       :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (not(is_full ?a))) 

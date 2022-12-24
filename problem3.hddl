@@ -17,7 +17,7 @@
     ;; i5 - item
     ;; i6 - item
     b1 - box
-    ;; b2 - box
+    b2 - box
     ;; b3 - box
     l1 - location 
     l2 - location 
@@ -26,8 +26,9 @@
 	(:htn
 		:parameters ()
 		:subtasks (and
-		 ;(task0 (deliver_box b1 l1 l2))
-          (task0 (deliver_food r1 i1))
+		;(task0 (deliver_box b1 l1 l2))
+        (task0 (deliver_food r1 i1 p1) (deliver_tool r1 i3 p1) )
+        ;(task0 (catch_item_put_in_box b1 i1))
         )
 	)
 	(:init
@@ -38,7 +39,7 @@
         (at_r r1 l1)
         ;;(at_r r2 l1)
         (at_b b1 l1)
-        ;;(at_b b2 l1)
+        (at_b b2 l1)
         ;; (at_b b3 l1)
         (at_i i1 l1)
         (at_i i2 l1)
@@ -62,6 +63,5 @@
         ; (need_tool p2)
         (is_empty_c c1)
         ;;(is_empty_c c2)
-        ;; extra for the assumtpion of capacity 1
 	)
 )
