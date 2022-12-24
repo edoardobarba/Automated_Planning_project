@@ -26,17 +26,11 @@
 	(:htn
 		:parameters ()
 		:subtasks (and
-		 (task0 (deliver_box b1 l1 l2))
-		)
+		 ;(task0 (deliver_box b1 l1 l2))
+          (task0 (deliver_food r1 i1))
+        )
 	)
 	(:init
-        (= (box_count a1) 0)
-        ;;(= (box_count a2) 0)
-        (= (max_capacity_carrier) 2)
-        (= (item_count b1) 0)
-        ;;(= (item_count b2) 0)
-        ;; (= (item_count b3) 0)
-        (= (max_capacity_box) 2) 
         (belongs_crane c1 r1)
         ;;(belongs_crane c2 r2)
         (belongs_carrier a1 r1)
@@ -68,5 +62,6 @@
         ; (need_tool p2)
         (is_empty_c c1)
         ;;(is_empty_c c2)
+        ;; extra for the assumtpion of capacity 1
 	)
 )
