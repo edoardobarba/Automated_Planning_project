@@ -1,5 +1,5 @@
-(define (domain domain2)
-    (:requirements :strips :typing :numeric-fluents :negative-preconditions :durative-actions)
+(define (domain domain4)
+    (:requirements  :typing :numeric-fluents  :durative-actions :negative-preconditions)
     (:types 
         person 
         robot 
@@ -31,6 +31,9 @@
         (need_food ?p - person) ;; person p need food
         (need_medicine ?p - person) ;; person p need medicine
         (need_tool ?p - person) ;; person p need tool
+        (satisfied_p_for_food ?p - person) ;; person p no longer need food
+        (satisfied_p_for_medicine ?p - person) ;; person p no longer need medicine
+        (satisfied_p_for_tool ?p - person) ;; person p no longer need tool
     )
 
     (:functions 
@@ -91,8 +94,8 @@
                       ( at start (is_empty_c ?c)) 
                       ( over all (belongs_crane ?c ?r))
                   )
-      :effect (and  ( at start (not(at_i ?i ?l))) 
-                    ( at end   (not (is_empty_c ?c))) 
+      :effect (and  ( at start (not(at_i ?i ?l))) ;; we comment here
+                    ( at start   (not (is_empty_c ?c))) 
                     ( at end   (holding_item ?c ?i))    
               )
     )
@@ -108,7 +111,7 @@
                   )
       :effect   (and ( at end   (inside ?i ?b)) 
                      ( at start (not(at_i ?i ?l))) 
-                     ( at end   (is_empty_c ?c)) 
+                     ( at start   (is_empty_c ?c)) 
                      ( at end   (not(holding_item ?c ?i))) 
                      ( at end   (increase (item_count ?b) 1))
                 )
@@ -125,7 +128,7 @@
                 )
       :effect (and ( at start (holding_item ?c ?i))
                    ( at end (not (inside ?i ?b))) 
-                   ( at end (not(is_empty_c ?c))) 
+                   ( at start (not(is_empty_c ?c))) 
                    ( at end   (decrease (item_count ?b) 1))    
               )
     )
@@ -145,6 +148,7 @@
       :effect (and  (at end  (not(need_food ?p)))
                     (at end  (is_empty_c ?c))
                     (at end  (not(holding_item ?c ?i)))
+                    (at end   (satisfied_p_for_food ?p))
       )
     )
              
@@ -166,6 +170,8 @@
       :effect (and  (at end  (not(need_tool ?p)))
                     (at end  (is_empty_c ?c))
                     (at end  (not(holding_item ?c ?i)))
+                    (at end   (satisfied_p_for_tool ?p))
+
       )
       
 	)
@@ -185,6 +191,8 @@
       :effect (and  (at end  (not(need_medicine ?p)))
                     (at end  (is_empty_c ?c))
                     (at end  (not(holding_item ?c ?i)))
+                    (at end   (satisfied_p_for_medicine ?p))
+
       )
     )
     

@@ -1,4 +1,5 @@
-(define (problem problem2_example) (:domain domain2)
+(define (problem problem4) 
+(:domain domain4)
 (:objects 
     r1 - robot
     r2 - robot
@@ -35,7 +36,7 @@
     (belongs_carrier a1 r1)
     (belongs_carrier a2 r2)
     (at_r r1 l1)
-    (at_r r2 l1)
+    (at_r r2 l2)
     (at_b b1 l1)
     (at_b b2 l1)
     ;; (at_b b3 l1)
@@ -64,15 +65,16 @@
 )
 
 (:goal  (and
-            (not(need_food p1))
-            (not(need_medicine p1))
-            (not(need_tool p1))
+            (satisfied_p_for_food p1)
+            ; (not(need_medicine p1))
+            ; (not(need_tool p1))
             ;; (not(need_food p2))
             ;; (not(need_medicine p2))
             ;; (not(need_tool p2))
         )
 
 )
+ (:metric minimize (total-time))
 )
 ;; planutils run downward "--alias lama-first domain1.pddl problem1.pddl"
 ;; remove the "" if you donot need it 
