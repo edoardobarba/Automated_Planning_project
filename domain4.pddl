@@ -124,8 +124,8 @@
                       ( over all (belongs_crane ?c ?r))
                 )
       :effect (and ( at start (holding_item ?c ?i))
-                   ( at start (not (inside ?i ?b))) 
-                   ( at start (not(is_empty_c ?c))) 
+                   ( at end (not (inside ?i ?b))) 
+                   ( at end (not(is_empty_c ?c))) 
                    ( at end   (decrease (item_count ?b) 1))    
               )
     )
@@ -186,4 +186,6 @@
                     (at end  (is_empty_c ?c))
                     (at end  (not(holding_item ?c ?i)))
       )
-  )
+    )
+    
+)
