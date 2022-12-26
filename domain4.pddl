@@ -82,13 +82,14 @@
                      ( at end   (decrease (box_count ?a) 1))
                 )
     )
+    ;; Mostafa
     (:durative-action pickup_item_from_location
       :parameters (?i - item ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
       :condition (and (at_r ?r ?l) (at_i ?i ?l) (is_empty_c ?c) (belongs_crane ?c ?r))
       :effect (and (not(at_i ?i ?l)) (not (is_empty_c ?c)) (holding_item ?c ?i))
     )
-
+    ;; Mostafa
     (:durative-action put_item_in_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
@@ -96,7 +97,7 @@
       :condition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l) (belongs_crane ?c ?r) (< (item_count ?b) (max_capacity_box)))
       :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (is_empty_c ?c) (not(holding_item ?c ?i)) (increase (item_count ?b) 1))
     )
-
+    ;; Mostafa
     (:durative-action pick_item_from_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
@@ -104,7 +105,7 @@
       :condition (and (at_b ?b ?l) (at_r ?r ?l) (is_empty_c ?c) (inside ?i ?b) (belongs_crane ?c ?r))
       :effect (and (holding_item ?c ?i) (not (inside ?i ?b)) (not(is_empty_c ?c)) (decrease (item_count ?b) 1))
     )
-
+    ;; edoardo
     (:durative-action pickdown_food
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :duration (= ?duration 3);; last 5 time points
@@ -121,6 +122,7 @@
                     (is_empty_c ?c)
                     (not(holding_item ?c ?i)))
 	   				) 
+    ;; edoardo
 
     (:durative-action pickdown_tool
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
@@ -140,7 +142,7 @@
 	   				) 
       
 	)
-
+    ;; edoardo
     (:durative-action pickdown_medicine
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :duration (= ?duration 3)
