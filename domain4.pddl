@@ -111,35 +111,38 @@
       :duration (= ?duration 3);; last 5 time points
 
       :condition (and 
-                        (need_food ?p) 
-                        (is_food ?i)
-                        (at_p ?p ?l)
-                        (at_r ?r ?l)
-                        (holding_item ?c ?i)
-                        (belongs_crane ?c ?r)
+                        (at start   (need_food ?p)) 
+                        (over all   (is_food ?i))
+                        (over all   (at_p ?p ?l))
+                        (over all   (at_r ?r ?l))
+                        (at start   (holding_item ?c ?i))
+                        (over all   (belongs_crane ?c ?r))
                     )
-      :effect (and  (not(need_food ?p))
-                    (is_empty_c ?c)
-                    (not(holding_item ?c ?i)))
-	   				) 
+      :effect (and  (at end  (not(need_food ?p)))
+                    (at end  (is_empty_c ?c))
+                    (at end  (not(holding_item ?c ?i)))
+      )
+    )
+             
+	   				
     ;; edoardo
 
     (:durative-action pickdown_tool
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
-        :duration (= ?duration 5);; last 5 time points
+      :duration (= ?duration 5);; last 5 time points
 
       :condition (and 
-                        (need_tool ?p) 
-                        (is_tool ?i)
-                        (at_p ?p ?l)
-                        (at_r ?r ?l)
-                        (holding_item ?c ?i)
-                        (belongs_crane ?c ?r)
+                        (at start   (need_tool ?p)) 
+                        (over all   (is_tool ?i))
+                        (over all   (at_p ?p ?l))
+                        (over all   (at_r ?r ?l))
+                        (at start   (holding_item ?c ?i))
+                        (over all   (belongs_crane ?c ?r))
                     )
-      :effect (and  (not(need_tool ?p))
-                    (is_empty_c ?c)
-                    (not(holding_item ?c ?i))
-	   				) 
+      :effect (and  (at end  (not(need_tool ?p)))
+                    (at end  (is_empty_c ?c))
+                    (at end  (not(holding_item ?c ?i)))
+      )
       
 	)
     ;; edoardo
@@ -148,16 +151,15 @@
       :duration (= ?duration 3)
 
       :condition (and 
-                        (need_medicine ?p) 
-                        (is_medicine ?i)
-                        (at_p ?p ?l)
-                        (at_r ?r ?l)
-                        (holding_item ?c ?i)
-                        (belongs_crane ?c ?r)
+                        (at start   (need_medicine ?p)) 
+                        (over all   (is_medicine ?i))
+                        (over all   (at_p ?p ?l))
+                        (over all   (at_r ?r ?l))
+                        (at start   (holding_item ?c ?i))
+                        (over all   (belongs_crane ?c ?r))
                     )
-      :effect (and  (not(need_medicine ?p))
-                    (is_empty_c ?c)
-                    (not(holding_item ?c ?i))
-	   				) 
-)
-)
+      :effect (and  (at end  (not(need_medicine ?p)))
+                    (at end  (is_empty_c ?c))
+                    (at end  (not(holding_item ?c ?i)))
+      )
+  )
