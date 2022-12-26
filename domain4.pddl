@@ -43,30 +43,48 @@
     (:durative-action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
       :duration (= ?duration 15)
-      :condition (at start (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r)))
-      :effect (and (at_r ?r ?to)
-                (not (at_r ?r ?from)))
+      :condition (and (at start (at_r ?r ?from))
+                      (over all (is_empty_c ?c)) 
+                      (over all (belongs_crane ?c ?r)) 
+                  )
+      :effect (and (at start (not (at_r ?r ?from)))
+                   (at end   (at_r ?r ?to))
+              )
     )
-
     ;; TODO capacity of carrier
     (:durative-action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
       :duration (= ?duration 5);; last 5 time points
-      :condition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (< (box_count ?a) (max_capacity_carrier))) 
-      :effect (and (not(at_b ?b ?l)) (on ?b ?a) (increase (box_count ?a) 1))
+      :condition (and ( over all (at_r ?r ?l))
+                      ( at start (at_b ?b ?l))
+                      ( over all (belongs_crane ?c ?r)) 
+                      ( over all (belongs_carrier ?a ?r)) 
+                      ( at start (is_empty_c ?c))  
+                      ( at start (< (box_count ?a) (max_capacity_carrier)))
+                  ) 
+      :effect (and ( at start (not(at_b ?b ?l))) 
+                   ( at end   (on ?b ?a)) 
+                   ( at end   (increase (box_count ?a) 1))
+              )
     )
 
     (:durative-action unload_box
         :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier)
         :duration (= ?duration 5)
-        :condition (and (at_r ?r ?l) (on ?b ?a) (belongs_carrier ?a ?r) (belongs_crane ?c ?r) (is_empty_c ?c))
-        :effect (and (not (on ?b ?a)) (at_b ?b ?l) (decrease (box_count ?a) 1))
+        :condition (and ( over all (at_r ?r ?l)) 
+                        ( at start (on ?b ?a))
+                        ( over all (belongs_carrier ?a ?r)) 
+                        ( over all (belongs_crane ?c ?r)) 
+                        ( at start (is_empty_c ?c))                     
+                    )
+        :effect (and ( at start (not (on ?b ?a))) 
+                     ( at end   (at_b ?b ?l)) 
+                     ( at end   (decrease (box_count ?a) 1))
+                )
     )
-
     (:durative-action pickup_item_from_location
       :parameters (?i - item ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
-
       :condition (and (at_r ?r ?l) (at_i ?i ?l) (is_empty_c ?c) (belongs_crane ?c ?r))
       :effect (and (not(at_i ?i ?l)) (not (is_empty_c ?c)) (holding_item ?c ?i))
     )
