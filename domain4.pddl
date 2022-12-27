@@ -110,9 +110,8 @@
                       ( at start (< (item_count ?b) (max_capacity_box)))
                   )
       :effect   (and ( at end   (inside ?i ?b)) 
-                     ( at start (not(at_i ?i ?l))) 
-                     ( at start   (is_empty_c ?c)) 
-                     ( at end   (not(holding_item ?c ?i))) 
+                     ( at end  (is_empty_c ?c)) 
+                     ( at start   (not(holding_item ?c ?i))) 
                      ( at end   (increase (item_count ?b) 1))
                 )
     )
@@ -126,7 +125,7 @@
                       ( at start (inside ?i ?b)) 
                       ( over all (belongs_crane ?c ?r))
                 )
-      :effect (and ( at start (holding_item ?c ?i))
+      :effect (and ( at end (holding_item ?c ?i))
                    ( at end (not (inside ?i ?b))) 
                    ( at start (not(is_empty_c ?c))) 
                    ( at end   (decrease (item_count ?b) 1))    
@@ -157,7 +156,7 @@
 
     (:durative-action pickdown_tool
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
-      :duration (= ?duration 5);; last 5 time points
+      :duration (= ?duration 3);; last 5 time points
 
       :condition (and 
                         (at start   (need_tool ?p)) 

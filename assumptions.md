@@ -21,8 +21,22 @@ java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner o
 For pandas command 
 java -jar PANDA.jar -parser hddl domain3.hddl problem3.hddl 
 
-for problem 4 command 
+## for problem 4 command:
+Avoids optimizing initial found solution!
+Run weighted A* with W = 1.000, not restarting with goal states
 planutils run optic "-N  domain4.pddl problem4.pddl"
+****
+planutils run optic "-N -W1,1 domain4.pddl problem4.pddl"
+Run weighted A* with W = 1.000, not restarting with goal states
+
+****
+planutils run optic "-N -E -W1,1 domain4.pddl problem4.pddl"
+Run weighted A* with W = 1.000, not restarting with goal states
+Skip EHC: go straight to best-first search
+
+****
+planutils run tfd domain4.pddl problem4.pddl
+No particular flags supported
 
 move_robot 15 seconds
 load_box 5 seconds 
