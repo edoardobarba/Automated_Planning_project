@@ -65,12 +65,12 @@
 )
 
 (:goal  (and
-            ; (satisfied_p_for_food p1)
+            (satisfied_p_for_food p1)
             (satisfied_p_for_tool p1)
             (satisfied_p_for_medicine p1)
-            ; (satisfied_p_for_food p2)
-            ; (satisfied_p_for_tool p2)
-            ; (satisfied_p_for_medicine p2)
+            (satisfied_p_for_food p2)
+            (satisfied_p_for_tool p2)
+            (satisfied_p_for_medicine p2)
             ; (not(need_medicine p1))
             ; (not(need_tool p1))
             ;; (not(need_food p2))

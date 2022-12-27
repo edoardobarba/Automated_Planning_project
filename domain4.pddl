@@ -146,7 +146,7 @@
                     )
       :effect (and  (at end  (not(need_food ?p)))
                     (at end  (is_empty_c ?c))
-                    (at end  (not(holding_item ?c ?i)))
+                    (at start  (not(holding_item ?c ?i)))
                     (at end   (satisfied_p_for_food ?p))
       )
     )
@@ -168,7 +168,7 @@
                     )
       :effect (and  (at end  (not(need_tool ?p)))
                     (at end  (is_empty_c ?c))
-                    (at end  (not(holding_item ?c ?i)))
+                    (at start  (not(holding_item ?c ?i)))
                     (at end   (satisfied_p_for_tool ?p))
 
       )
@@ -189,7 +189,7 @@
                     )
       :effect (and  (at end  (not(need_medicine ?p)))
                     (at end  (is_empty_c ?c))
-                    (at end  (not(holding_item ?c ?i)))
+                    (at start  (not(holding_item ?c ?i)))
                     (at end   (satisfied_p_for_medicine ?p))
 
       )
