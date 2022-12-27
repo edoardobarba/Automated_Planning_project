@@ -45,7 +45,7 @@
 
     (:durative-action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
-      :duration (= ?duration 15)
+      :duration (= ?duration 50)
       :condition (and (at start (at_r ?r ?from))
                       (over all (is_empty_c ?c)) 
                       (over all (belongs_crane ?c ?r)) 
@@ -68,6 +68,8 @@
       :effect (and ( at start (not(at_b ?b ?l))) 
                    ( at end   (on ?b ?a)) 
                    ( at end   (increase (box_count ?a) 1))
+                   ( at start (not (is_empty_c ?c)))
+                   ( at end   (is_empty_c ?c)) 
               )
     )
 
@@ -83,6 +85,8 @@
         :effect (and ( at start (not (on ?b ?a))) 
                      ( at end   (at_b ?b ?l)) 
                      ( at end   (decrease (box_count ?a) 1))
+                     ( at start (not (is_empty_c ?c)))
+                     ( at end   (is_empty_c ?c)) 
                 )
     )
     ;; Mostafa
