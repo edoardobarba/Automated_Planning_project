@@ -1,0 +1,67 @@
+[0.027s] Invoking command in '/root/Automated_Planning_project/build/plansys2_problem5': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/Automated_Planning_project/plansys2_problem5 -DCMAKE_INSTALL_PREFIX=/root/Automated_Planning_project/install/plansys2_problem5
+[0.081s] -- The C compiler identification is GNU 11.3.0
+[0.124s] -- The CXX compiler identification is GNU 11.3.0
+[0.139s] -- Detecting C compiler ABI info
+[0.197s] -- Detecting C compiler ABI info - done
+[0.202s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.202s] -- Detecting C compile features
+[0.202s] -- Detecting C compile features - done
+[0.204s] -- Detecting CXX compiler ABI info
+[0.278s] -- Detecting CXX compiler ABI info - done
+[0.292s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.292s] -- Detecting CXX compile features
+[0.292s] -- Detecting CXX compile features - done
+[0.295s] -- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.448s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[0.544s] -- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)
+[0.599s] -- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.608s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.625s] -- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.644s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.665s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.726s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.735s] -- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.848s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.876s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.935s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.946s] -- Looking for pthread.h
+[1.005s] -- Looking for pthread.h - found
+[1.006s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.083s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.085s] -- Found Threads: TRUE  
+[1.207s] -- Found rclcpp_action: 16.0.2 (/opt/ros/humble/share/rclcpp_action/cmake)
+[1.297s] -- Found plansys2_msgs: 2.0.8 (/root/plansys2_ws/install/plansys2_msgs/share/plansys2_msgs/cmake)
+[1.364s] -- Found plansys2_executor: 2.0.8 (/root/plansys2_ws/install/plansys2_executor/share/plansys2_executor/cmake)
+[3.475s] -- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.551s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.551s] -- Added test 'lint_cmake' to check CMake code style
+[3.552s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.554s] -- Added test 'xmllint' to check XML markup files
+[3.558s] -- Configuring done
+[3.566s] -- Generating done
+[3.568s] -- Build files have been written to: /root/Automated_Planning_project/build/plansys2_problem5
+[3.577s] Invoked command in '/root/Automated_Planning_project/build/plansys2_problem5' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/Automated_Planning_project/plansys2_problem5 -DCMAKE_INSTALL_PREFIX=/root/Automated_Planning_project/install/plansys2_problem5
+[3.578s] Invoking command in '/root/Automated_Planning_project/build/plansys2_problem5': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/Automated_Planning_project/build/plansys2_problem5 -- -j16 -l16
+[3.616s] Invoked command in '/root/Automated_Planning_project/build/plansys2_problem5' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/Automated_Planning_project/build/plansys2_problem5 -- -j16 -l16
+[3.642s] Invoking command in '/root/Automated_Planning_project/build/plansys2_problem5': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/Automated_Planning_project/build/plansys2_problem5
+[3.649s] -- Install configuration: ""
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch/plansys2_problem5_launch.py
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/pddl
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/pddl/domain4.pddl
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/package_run_dependencies/plansys2_problem5
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/parent_prefix_path/plansys2_problem5
+[3.649s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/ament_prefix_path.sh
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/ament_prefix_path.dsv
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/path.sh
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/path.dsv
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.bash
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.sh
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.zsh
+[3.650s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.dsv
+[3.651s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/package.dsv
+[3.651s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/packages/plansys2_problem5
+[3.651s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/cmake/plansys2_problem5Config.cmake
+[3.651s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/cmake/plansys2_problem5Config-version.cmake
+[3.651s] -- Installing: /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/package.xml
+[3.653s] Invoked command in '/root/Automated_Planning_project/build/plansys2_problem5' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/Automated_Planning_project/build/plansys2_problem5

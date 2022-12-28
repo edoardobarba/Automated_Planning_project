@@ -1,0 +1,17 @@
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch/plansys2_problem5_launch.py
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/pddl/domain4.pddl
+/root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/package_run_dependencies/plansys2_problem5
+/root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/parent_prefix_path/plansys2_problem5
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/ament_prefix_path.sh
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/ament_prefix_path.dsv
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/path.sh
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/path.dsv
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.bash
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.sh
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.zsh
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/local_setup.dsv
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/package.dsv
+/root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/packages/plansys2_problem5
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/cmake/plansys2_problem5Config.cmake
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/cmake/plansys2_problem5Config-version.cmake
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/package.xml
