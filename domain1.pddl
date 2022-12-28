@@ -8,7 +8,7 @@
         location 
         item
     )
-
+; push from container
     (:predicates 
         (is_empty_b ?b - box) ;; box b is empty
         (is_full ?b - box) ;; box b is full
