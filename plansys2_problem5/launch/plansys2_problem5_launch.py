@@ -51,6 +51,38 @@ def generate_launch_description():
         output='screen',
         parameters=[])
 
+    pick_item_from_box_cmd = Node(
+        package='plansys2_problem5',
+        executable='pick_item_from_box_node',
+        name='pick_item_from_box_node',
+        namespace=namespace,
+        output='screen',
+        parameters=[])
+
+    pickdown_food_cmd = Node(
+        package='plansys2_problem5',
+        executable='pickdown_food_node',
+        name='pickdown_food_node',
+        namespace=namespace,
+        output='screen',
+        parameters=[])
+
+    pickdown_medicine_cmd = Node(
+        package='plansys2_problem5',
+        executable='pickdown_medicine_node',
+        name='pickdown_medicine_node',
+        namespace=namespace,
+        output='screen',
+        parameters=[])
+
+    pickdown_tool_cmd = Node(
+        package='plansys2_problem5',
+        executable='pickdown_tool_node',
+        name='pickdown_tool_node',
+        namespace=namespace,
+        output='screen',
+        parameters=[])
+
     ld = LaunchDescription()
 
     ld.add_action(declare_namespace_cmd)
@@ -59,6 +91,10 @@ def generate_launch_description():
     ld.add_action(plansys2_cmd)
     # to be modified
     ld.add_action(move_robot_cmd)
+    ld.add_action(pick_item_from_box_cmd)
+    ld.add_action(pickdown_food_cmd)
+    ld.add_action(pickdown_medicine_cmd)
+    ld.add_action(pickdown_tool_cmd)
  
 
     return ld
