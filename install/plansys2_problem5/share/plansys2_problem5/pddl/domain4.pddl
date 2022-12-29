@@ -1,5 +1,5 @@
 (define (domain domain4)
-    (:requirements  :typing :numeric-fluents  :durative-actions :negative-preconditions)
+    (:requirements :strips :adl  :typing :fluents  :durative-actions :negative-preconditions)
     (:types 
         person 
         robot 

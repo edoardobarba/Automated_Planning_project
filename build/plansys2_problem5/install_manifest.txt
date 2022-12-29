@@ -1,5 +1,6 @@
 /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch/commands
 /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch/plansys2_problem5_launch.py
+/root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch/commands_smaller
 /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/pddl/domain4.pddl
 /root/Automated_Planning_project/install/plansys2_problem5/lib/plansys2_problem5/move_robot_action_node
 /root/Automated_Planning_project/install/plansys2_problem5/lib/plansys2_problem5/pick_item_from_box_action_node
