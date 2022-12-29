@@ -22,6 +22,20 @@ set(dependencies
 
 add_executable(move_robot_action_node src/move_robot_action_node.cpp)
 ament_target_dependencies(move_robot_action_node ${dependencies})
+# Mostafa Part START
+## load_box_action_node
+add_executable(load_box_action_node src/load_box_action_node.cpp)
+ament_target_dependencies(load_box_action_node ${dependencies})
+## unload_box_action_node
+add_executable(unload_box_action_node src/unload_box_action_node.cpp)
+ament_target_dependencies(unload_box_action_node ${dependencies})
+## pick_up_item_from_location_action_node
+add_executable(pick_up_item_from_location_action_node src/pick_up_item_from_location_action_node.cpp)
+ament_target_dependencies(pick_up_item_from_location_action_node ${dependencies})
+## put_item_in_box_action_node
+add_executable(put_item_in_box_action_node src/put_item_in_box_action_node.cpp)
+ament_target_dependencies(put_item_in_box_action_node ${dependencies})
+# Mostafa Part END
 
 # add_executable(charge_action_node src/charge_action_node.cpp)
 # ament_target_dependencies(charge_action_node ${dependencies})

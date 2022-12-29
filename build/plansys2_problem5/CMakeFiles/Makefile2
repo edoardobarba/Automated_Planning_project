@@ -64,6 +64,10 @@ CMAKE_BINARY_DIR = /root/Automated_Planning_project/build/plansys2_problem5
 
 # The main recursive "all" target.
 all: CMakeFiles/move_robot_action_node.dir/all
+all: CMakeFiles/load_box_action_node.dir/all
+all: CMakeFiles/unload_box_action_node.dir/all
+all: CMakeFiles/pick_up_item_from_location_action_node.dir/all
+all: CMakeFiles/put_item_in_box_action_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,6 +78,10 @@ preinstall:
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/plansys2_problem5_uninstall.dir/clean
 clean: CMakeFiles/move_robot_action_node.dir/clean
+clean: CMakeFiles/load_box_action_node.dir/clean
+clean: CMakeFiles/unload_box_action_node.dir/clean
+clean: CMakeFiles/pick_up_item_from_location_action_node.dir/clean
+clean: CMakeFiles/put_item_in_box_action_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -135,7 +143,7 @@ CMakeFiles/plansys2_problem5_uninstall.dir/clean:
 CMakeFiles/move_robot_action_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles --progress-num=1,2 "Built target move_robot_action_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles --progress-num=3,4 "Built target move_robot_action_node"
 .PHONY : CMakeFiles/move_robot_action_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -153,6 +161,110 @@ move_robot_action_node: CMakeFiles/move_robot_action_node.dir/rule
 CMakeFiles/move_robot_action_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/clean
 .PHONY : CMakeFiles/move_robot_action_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/load_box_action_node.dir
+
+# All Build rule for target.
+CMakeFiles/load_box_action_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles --progress-num=1,2 "Built target load_box_action_node"
+.PHONY : CMakeFiles/load_box_action_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/load_box_action_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/load_box_action_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 0
+.PHONY : CMakeFiles/load_box_action_node.dir/rule
+
+# Convenience name for target.
+load_box_action_node: CMakeFiles/load_box_action_node.dir/rule
+.PHONY : load_box_action_node
+
+# clean rule for target.
+CMakeFiles/load_box_action_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/clean
+.PHONY : CMakeFiles/load_box_action_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/unload_box_action_node.dir
+
+# All Build rule for target.
+CMakeFiles/unload_box_action_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles --progress-num=9,10 "Built target unload_box_action_node"
+.PHONY : CMakeFiles/unload_box_action_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/unload_box_action_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/unload_box_action_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 0
+.PHONY : CMakeFiles/unload_box_action_node.dir/rule
+
+# Convenience name for target.
+unload_box_action_node: CMakeFiles/unload_box_action_node.dir/rule
+.PHONY : unload_box_action_node
+
+# clean rule for target.
+CMakeFiles/unload_box_action_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/clean
+.PHONY : CMakeFiles/unload_box_action_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pick_up_item_from_location_action_node.dir
+
+# All Build rule for target.
+CMakeFiles/pick_up_item_from_location_action_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles --progress-num=5,6 "Built target pick_up_item_from_location_action_node"
+.PHONY : CMakeFiles/pick_up_item_from_location_action_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pick_up_item_from_location_action_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pick_up_item_from_location_action_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 0
+.PHONY : CMakeFiles/pick_up_item_from_location_action_node.dir/rule
+
+# Convenience name for target.
+pick_up_item_from_location_action_node: CMakeFiles/pick_up_item_from_location_action_node.dir/rule
+.PHONY : pick_up_item_from_location_action_node
+
+# clean rule for target.
+CMakeFiles/pick_up_item_from_location_action_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/clean
+.PHONY : CMakeFiles/pick_up_item_from_location_action_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/put_item_in_box_action_node.dir
+
+# All Build rule for target.
+CMakeFiles/put_item_in_box_action_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles --progress-num=7,8 "Built target put_item_in_box_action_node"
+.PHONY : CMakeFiles/put_item_in_box_action_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/put_item_in_box_action_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/put_item_in_box_action_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles 0
+.PHONY : CMakeFiles/put_item_in_box_action_node.dir/rule
+
+# Convenience name for target.
+put_item_in_box_action_node: CMakeFiles/put_item_in_box_action_node.dir/rule
+.PHONY : put_item_in_box_action_node
+
+# clean rule for target.
+CMakeFiles/put_item_in_box_action_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/clean
+.PHONY : CMakeFiles/put_item_in_box_action_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
