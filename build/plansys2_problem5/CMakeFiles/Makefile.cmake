@@ -901,4 +901,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/plansys2_problem5_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/move_robot_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/load_box_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/unload_box_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/pick_up_item_from_location_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/put_item_in_box_action_node.dir/DependInfo.cmake"
   )

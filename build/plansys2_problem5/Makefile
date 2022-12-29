@@ -210,6 +210,82 @@ move_robot_action_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/build
 .PHONY : move_robot_action_node/fast
 
+#=============================================================================
+# Target rules for targets named load_box_action_node
+
+# Build rule for target.
+load_box_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 load_box_action_node
+.PHONY : load_box_action_node
+
+# fast build rule for target.
+load_box_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/build
+.PHONY : load_box_action_node/fast
+
+#=============================================================================
+# Target rules for targets named unload_box_action_node
+
+# Build rule for target.
+unload_box_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unload_box_action_node
+.PHONY : unload_box_action_node
+
+# fast build rule for target.
+unload_box_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/build
+.PHONY : unload_box_action_node/fast
+
+#=============================================================================
+# Target rules for targets named pick_up_item_from_location_action_node
+
+# Build rule for target.
+pick_up_item_from_location_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pick_up_item_from_location_action_node
+.PHONY : pick_up_item_from_location_action_node
+
+# fast build rule for target.
+pick_up_item_from_location_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/build
+.PHONY : pick_up_item_from_location_action_node/fast
+
+#=============================================================================
+# Target rules for targets named put_item_in_box_action_node
+
+# Build rule for target.
+put_item_in_box_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 put_item_in_box_action_node
+.PHONY : put_item_in_box_action_node
+
+# fast build rule for target.
+put_item_in_box_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/build
+.PHONY : put_item_in_box_action_node/fast
+
+src/load_box_action_node.o: src/load_box_action_node.cpp.o
+.PHONY : src/load_box_action_node.o
+
+# target to build an object file
+src/load_box_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/src/load_box_action_node.cpp.o
+.PHONY : src/load_box_action_node.cpp.o
+
+src/load_box_action_node.i: src/load_box_action_node.cpp.i
+.PHONY : src/load_box_action_node.i
+
+# target to preprocess a source file
+src/load_box_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/src/load_box_action_node.cpp.i
+.PHONY : src/load_box_action_node.cpp.i
+
+src/load_box_action_node.s: src/load_box_action_node.cpp.s
+.PHONY : src/load_box_action_node.s
+
+# target to generate assembly for a file
+src/load_box_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_box_action_node.dir/build.make CMakeFiles/load_box_action_node.dir/src/load_box_action_node.cpp.s
+.PHONY : src/load_box_action_node.cpp.s
+
 src/move_robot_action_node.o: src/move_robot_action_node.cpp.o
 .PHONY : src/move_robot_action_node.o
 
@@ -234,6 +310,78 @@ src/move_robot_action_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/src/move_robot_action_node.cpp.s
 .PHONY : src/move_robot_action_node.cpp.s
 
+src/pick_up_item_from_location_action_node.o: src/pick_up_item_from_location_action_node.cpp.o
+.PHONY : src/pick_up_item_from_location_action_node.o
+
+# target to build an object file
+src/pick_up_item_from_location_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/src/pick_up_item_from_location_action_node.cpp.o
+.PHONY : src/pick_up_item_from_location_action_node.cpp.o
+
+src/pick_up_item_from_location_action_node.i: src/pick_up_item_from_location_action_node.cpp.i
+.PHONY : src/pick_up_item_from_location_action_node.i
+
+# target to preprocess a source file
+src/pick_up_item_from_location_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/src/pick_up_item_from_location_action_node.cpp.i
+.PHONY : src/pick_up_item_from_location_action_node.cpp.i
+
+src/pick_up_item_from_location_action_node.s: src/pick_up_item_from_location_action_node.cpp.s
+.PHONY : src/pick_up_item_from_location_action_node.s
+
+# target to generate assembly for a file
+src/pick_up_item_from_location_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/src/pick_up_item_from_location_action_node.cpp.s
+.PHONY : src/pick_up_item_from_location_action_node.cpp.s
+
+src/put_item_in_box_action_node.o: src/put_item_in_box_action_node.cpp.o
+.PHONY : src/put_item_in_box_action_node.o
+
+# target to build an object file
+src/put_item_in_box_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/src/put_item_in_box_action_node.cpp.o
+.PHONY : src/put_item_in_box_action_node.cpp.o
+
+src/put_item_in_box_action_node.i: src/put_item_in_box_action_node.cpp.i
+.PHONY : src/put_item_in_box_action_node.i
+
+# target to preprocess a source file
+src/put_item_in_box_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/src/put_item_in_box_action_node.cpp.i
+.PHONY : src/put_item_in_box_action_node.cpp.i
+
+src/put_item_in_box_action_node.s: src/put_item_in_box_action_node.cpp.s
+.PHONY : src/put_item_in_box_action_node.s
+
+# target to generate assembly for a file
+src/put_item_in_box_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/src/put_item_in_box_action_node.cpp.s
+.PHONY : src/put_item_in_box_action_node.cpp.s
+
+src/unload_box_action_node.o: src/unload_box_action_node.cpp.o
+.PHONY : src/unload_box_action_node.o
+
+# target to build an object file
+src/unload_box_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/src/unload_box_action_node.cpp.o
+.PHONY : src/unload_box_action_node.cpp.o
+
+src/unload_box_action_node.i: src/unload_box_action_node.cpp.i
+.PHONY : src/unload_box_action_node.i
+
+# target to preprocess a source file
+src/unload_box_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/src/unload_box_action_node.cpp.i
+.PHONY : src/unload_box_action_node.cpp.i
+
+src/unload_box_action_node.s: src/unload_box_action_node.cpp.s
+.PHONY : src/unload_box_action_node.s
+
+# target to generate assembly for a file
+src/unload_box_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unload_box_action_node.dir/build.make CMakeFiles/unload_box_action_node.dir/src/unload_box_action_node.cpp.s
+.PHONY : src/unload_box_action_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,10 +397,26 @@ help:
 	@echo "... test"
 	@echo "... plansys2_problem5_uninstall"
 	@echo "... uninstall"
+	@echo "... load_box_action_node"
 	@echo "... move_robot_action_node"
+	@echo "... pick_up_item_from_location_action_node"
+	@echo "... put_item_in_box_action_node"
+	@echo "... unload_box_action_node"
+	@echo "... src/load_box_action_node.o"
+	@echo "... src/load_box_action_node.i"
+	@echo "... src/load_box_action_node.s"
 	@echo "... src/move_robot_action_node.o"
 	@echo "... src/move_robot_action_node.i"
 	@echo "... src/move_robot_action_node.s"
+	@echo "... src/pick_up_item_from_location_action_node.o"
+	@echo "... src/pick_up_item_from_location_action_node.i"
+	@echo "... src/pick_up_item_from_location_action_node.s"
+	@echo "... src/put_item_in_box_action_node.o"
+	@echo "... src/put_item_in_box_action_node.i"
+	@echo "... src/put_item_in_box_action_node.s"
+	@echo "... src/unload_box_action_node.o"
+	@echo "... src/unload_box_action_node.i"
+	@echo "... src/unload_box_action_node.s"
 .PHONY : help
 
 

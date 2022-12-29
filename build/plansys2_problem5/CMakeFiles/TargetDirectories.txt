@@ -1,6 +1,10 @@
 /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/uninstall.dir
 /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/plansys2_problem5_uninstall.dir
 /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/move_robot_action_node.dir
+/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/load_box_action_node.dir
+/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/unload_box_action_node.dir
+/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/pick_up_item_from_location_action_node.dir
+/root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/put_item_in_box_action_node.dir
 /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/test.dir
 /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/edit_cache.dir
 /root/Automated_Planning_project/build/plansys2_problem5/CMakeFiles/rebuild_cache.dir
