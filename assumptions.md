@@ -47,3 +47,9 @@ pick_item_from_box 3 seconds
 pickdown_food 3 seconds
 pickdown_tool 3 seconds
 pickdown_medicine 3 seconds
+
+
+For ros 
+ros2 launch plansys2_problem5 plansys2_problem5_launch.py
+
+ros2 run plansys2_terminal plansys2_terminal

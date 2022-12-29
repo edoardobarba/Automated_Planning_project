@@ -53,8 +53,8 @@ def generate_launch_description():
     
     load_box_cmd = Node(
         package='plansys2_problem5',
-        executable='move_robot_node',
-        name='move_robot_node',
+        executable='load_box_action_node',
+        name='load_box_action_node',
         namespace=namespace,
         output='screen',
         parameters=[])
@@ -83,32 +83,32 @@ def generate_launch_description():
     ## END Mostafa Part
     pick_item_from_box_cmd = Node(
         package='plansys2_problem5',
-        executable='pick_item_from_box_node',
-        name='pick_item_from_box_node',
+        executable='pick_item_from_box_action_node',
+        name='pick_item_from_box_action_node',
         namespace=namespace,
         output='screen',
         parameters=[])
 
     pickdown_food_cmd = Node(
         package='plansys2_problem5',
-        executable='pickdown_food_node',
-        name='pickdown_food_node',
+        executable='pickdown_food_action_node',
+        name='pickdown_food_action_node',
         namespace=namespace,
         output='screen',
         parameters=[])
 
     pickdown_medicine_cmd = Node(
         package='plansys2_problem5',
-        executable='pickdown_medicine_node',
-        name='pickdown_medicine_node',
+        executable='pickdown_medicine_action_node',
+        name='pickdown_medicine_action_node',
         namespace=namespace,
         output='screen',
         parameters=[])
 
     pickdown_tool_cmd = Node(
         package='plansys2_problem5',
-        executable='pickdown_tool_node',
-        name='pickdown_tool_node',
+        executable='pickdown_tool_action_node',
+        name='pickdown_tool_action_node',
         namespace=namespace,
         output='screen',
         parameters=[])

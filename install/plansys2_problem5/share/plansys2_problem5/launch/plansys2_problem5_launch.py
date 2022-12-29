@@ -53,8 +53,8 @@ def generate_launch_description():
     
     load_box_cmd = Node(
         package='plansys2_problem5',
-        executable='move_robot_node',
-        name='move_robot_node',
+        executable='load_box_action_node',
+        name='load_box_action_node',
         namespace=namespace,
         output='screen',
         parameters=[])
