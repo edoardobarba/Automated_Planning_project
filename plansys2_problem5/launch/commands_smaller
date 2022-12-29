@@ -13,7 +13,6 @@ set instance b2 box
 set instance l1 location
 set instance l2 location
 set instance l3 location
-
 set predicate (belongs_crane c1 r1)
 set predicate (belongs_crane c2 r2)
 set predicate (belongs_carrier a1 r1)
