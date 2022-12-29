@@ -197,6 +197,43 @@ plansys2_problem5_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/plansys2_problem5_uninstall.dir/build.make CMakeFiles/plansys2_problem5_uninstall.dir/build
 .PHONY : plansys2_problem5_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named move_robot_action_node
+
+# Build rule for target.
+move_robot_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 move_robot_action_node
+.PHONY : move_robot_action_node
+
+# fast build rule for target.
+move_robot_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/build
+.PHONY : move_robot_action_node/fast
+
+src/move_robot_action_node.o: src/move_robot_action_node.cpp.o
+.PHONY : src/move_robot_action_node.o
+
+# target to build an object file
+src/move_robot_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/src/move_robot_action_node.cpp.o
+.PHONY : src/move_robot_action_node.cpp.o
+
+src/move_robot_action_node.i: src/move_robot_action_node.cpp.i
+.PHONY : src/move_robot_action_node.i
+
+# target to preprocess a source file
+src/move_robot_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/src/move_robot_action_node.cpp.i
+.PHONY : src/move_robot_action_node.cpp.i
+
+src/move_robot_action_node.s: src/move_robot_action_node.cpp.s
+.PHONY : src/move_robot_action_node.s
+
+# target to generate assembly for a file
+src/move_robot_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/src/move_robot_action_node.cpp.s
+.PHONY : src/move_robot_action_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... plansys2_problem5_uninstall"
 	@echo "... uninstall"
+	@echo "... move_robot_action_node"
+	@echo "... src/move_robot_action_node.o"
+	@echo "... src/move_robot_action_node.i"
+	@echo "... src/move_robot_action_node.s"
 .PHONY : help
 
 

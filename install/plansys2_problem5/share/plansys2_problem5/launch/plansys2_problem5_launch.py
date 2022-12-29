@@ -43,31 +43,14 @@ def generate_launch_description():
           'namespace': namespace
           }.items())
 
-    # Specify the actions
-    # start addomg the actions
-    # move_cmd = Node(
-    #     package='plansys2_simple_example',
-    #     executable='move_action_node',
-    #     name='move_action_node',
-    #     namespace=namespace,
-    #     output='screen',
-    #     parameters=[])
+    move_robot_cmd = Node(
+        package='plansys2_problem5',
+        executable='move_robot_node',
+        name='move_robot_node',
+        namespace=namespace,
+        output='screen',
+        parameters=[])
 
-    # charge_cmd = Node(
-    #     package='plansys2_simple_example',
-    #     executable='charge_action_node',
-    #     name='charge_action_node',
-    #     namespace=namespace,
-    #     output='screen',
-    #     parameters=[])
-
-    # ask_charge_cmd = Node(
-    #     package='plansys2_simple_example',
-    #     executable='ask_charge_action_node',
-    #     name='ask_charge_action_node',
-    #     namespace=namespace,
-    #     output='screen',
-    #     parameters=[])   # Create the launch description and populate
     ld = LaunchDescription()
 
     ld.add_action(declare_namespace_cmd)
@@ -75,8 +58,7 @@ def generate_launch_description():
     # Declare the launch options
     ld.add_action(plansys2_cmd)
     # to be modified
-    # ld.add_action(move_cmd)
-    # ld.add_action(charge_cmd)
-    # ld.add_action(ask_charge_cmd)
+    ld.add_action(move_robot_cmd)
+ 
 
     return ld

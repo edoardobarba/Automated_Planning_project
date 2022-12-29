@@ -1,5 +1,6 @@
 /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/launch/plansys2_problem5_launch.py
 /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/pddl/domain4.pddl
+/root/Automated_Planning_project/install/plansys2_problem5/lib/plansys2_problem5/move_robot_action_node
 /root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/package_run_dependencies/plansys2_problem5
 /root/Automated_Planning_project/install/plansys2_problem5/share/ament_index/resource_index/parent_prefix_path/plansys2_problem5
 /root/Automated_Planning_project/install/plansys2_problem5/share/plansys2_problem5/environment/ament_prefix_path.sh

@@ -20,8 +20,8 @@ set(dependencies
     plansys2_executor
 )
 
-# add_executable(move_action_node src/move_action_node.cpp)
-# ament_target_dependencies(move_action_node ${dependencies})
+add_executable(move_robot_action_node src/move_robot_action_node.cpp)
+ament_target_dependencies(move_robot_action_node ${dependencies})
 
 # add_executable(charge_action_node src/charge_action_node.cpp)
 # ament_target_dependencies(charge_action_node ${dependencies})
@@ -33,7 +33,7 @@ set(dependencies
 install(DIRECTORY launch pddl DESTINATION share/${PROJECT_NAME})
 
 install(TARGETS
-  #move_action_node
+  move_robot_action_node
   #charge_action_node
   #ask_charge_action_node
   ARCHIVE DESTINATION lib
