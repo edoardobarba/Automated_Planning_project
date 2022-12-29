@@ -905,4 +905,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/unload_box_action_node.dir/DependInfo.cmake"
   "CMakeFiles/pick_up_item_from_location_action_node.dir/DependInfo.cmake"
   "CMakeFiles/put_item_in_box_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/pick_item_from_box_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/pickdown_food_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/pickdown_medicine_action_node.dir/DependInfo.cmake"
+  "CMakeFiles/pickdown_tool_action_node.dir/DependInfo.cmake"
   )

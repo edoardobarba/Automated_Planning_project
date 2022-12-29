@@ -38,7 +38,7 @@ ament_target_dependencies(put_item_in_box_action_node ${dependencies})
 # Mostafa Part END
 
 add_executable(pick_item_from_box_action_node src/pick_item_from_box_action_node.cpp)
-ament_target_dependencies(move_robot_action_node ${dependencies})
+ament_target_dependencies(pick_item_from_box_action_node ${dependencies})
 
 add_executable(pickdown_food_action_node src/pickdown_food_action_node.cpp)
 ament_target_dependencies(pickdown_food_action_node ${dependencies})
@@ -59,10 +59,15 @@ install(DIRECTORY launch pddl DESTINATION share/${PROJECT_NAME})
 
 install(TARGETS
   move_robot_action_node
-  pick_item_from_box_node
+  pick_item_from_box_action_node
   pickdown_food_action_node
   pickdown_medicine_action_node
   pickdown_tool_action_node
+  # Mostafa part
+  load_box_action_node
+  unload_box_action_node
+  pick_up_item_from_location_action_node
+  put_item_in_box_action_node
   #charge_action_node
   #ask_charge_action_node
   ARCHIVE DESTINATION lib

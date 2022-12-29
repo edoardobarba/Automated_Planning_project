@@ -262,6 +262,58 @@ put_item_in_box_action_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/put_item_in_box_action_node.dir/build.make CMakeFiles/put_item_in_box_action_node.dir/build
 .PHONY : put_item_in_box_action_node/fast
 
+#=============================================================================
+# Target rules for targets named pick_item_from_box_action_node
+
+# Build rule for target.
+pick_item_from_box_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pick_item_from_box_action_node
+.PHONY : pick_item_from_box_action_node
+
+# fast build rule for target.
+pick_item_from_box_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_item_from_box_action_node.dir/build.make CMakeFiles/pick_item_from_box_action_node.dir/build
+.PHONY : pick_item_from_box_action_node/fast
+
+#=============================================================================
+# Target rules for targets named pickdown_food_action_node
+
+# Build rule for target.
+pickdown_food_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickdown_food_action_node
+.PHONY : pickdown_food_action_node
+
+# fast build rule for target.
+pickdown_food_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_food_action_node.dir/build.make CMakeFiles/pickdown_food_action_node.dir/build
+.PHONY : pickdown_food_action_node/fast
+
+#=============================================================================
+# Target rules for targets named pickdown_medicine_action_node
+
+# Build rule for target.
+pickdown_medicine_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickdown_medicine_action_node
+.PHONY : pickdown_medicine_action_node
+
+# fast build rule for target.
+pickdown_medicine_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_medicine_action_node.dir/build.make CMakeFiles/pickdown_medicine_action_node.dir/build
+.PHONY : pickdown_medicine_action_node/fast
+
+#=============================================================================
+# Target rules for targets named pickdown_tool_action_node
+
+# Build rule for target.
+pickdown_tool_action_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickdown_tool_action_node
+.PHONY : pickdown_tool_action_node
+
+# fast build rule for target.
+pickdown_tool_action_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_tool_action_node.dir/build.make CMakeFiles/pickdown_tool_action_node.dir/build
+.PHONY : pickdown_tool_action_node/fast
+
 src/load_box_action_node.o: src/load_box_action_node.cpp.o
 .PHONY : src/load_box_action_node.o
 
@@ -310,6 +362,30 @@ src/move_robot_action_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_robot_action_node.dir/build.make CMakeFiles/move_robot_action_node.dir/src/move_robot_action_node.cpp.s
 .PHONY : src/move_robot_action_node.cpp.s
 
+src/pick_item_from_box_action_node.o: src/pick_item_from_box_action_node.cpp.o
+.PHONY : src/pick_item_from_box_action_node.o
+
+# target to build an object file
+src/pick_item_from_box_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_item_from_box_action_node.dir/build.make CMakeFiles/pick_item_from_box_action_node.dir/src/pick_item_from_box_action_node.cpp.o
+.PHONY : src/pick_item_from_box_action_node.cpp.o
+
+src/pick_item_from_box_action_node.i: src/pick_item_from_box_action_node.cpp.i
+.PHONY : src/pick_item_from_box_action_node.i
+
+# target to preprocess a source file
+src/pick_item_from_box_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_item_from_box_action_node.dir/build.make CMakeFiles/pick_item_from_box_action_node.dir/src/pick_item_from_box_action_node.cpp.i
+.PHONY : src/pick_item_from_box_action_node.cpp.i
+
+src/pick_item_from_box_action_node.s: src/pick_item_from_box_action_node.cpp.s
+.PHONY : src/pick_item_from_box_action_node.s
+
+# target to generate assembly for a file
+src/pick_item_from_box_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_item_from_box_action_node.dir/build.make CMakeFiles/pick_item_from_box_action_node.dir/src/pick_item_from_box_action_node.cpp.s
+.PHONY : src/pick_item_from_box_action_node.cpp.s
+
 src/pick_up_item_from_location_action_node.o: src/pick_up_item_from_location_action_node.cpp.o
 .PHONY : src/pick_up_item_from_location_action_node.o
 
@@ -333,6 +409,78 @@ src/pick_up_item_from_location_action_node.s: src/pick_up_item_from_location_act
 src/pick_up_item_from_location_action_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pick_up_item_from_location_action_node.dir/build.make CMakeFiles/pick_up_item_from_location_action_node.dir/src/pick_up_item_from_location_action_node.cpp.s
 .PHONY : src/pick_up_item_from_location_action_node.cpp.s
+
+src/pickdown_food_action_node.o: src/pickdown_food_action_node.cpp.o
+.PHONY : src/pickdown_food_action_node.o
+
+# target to build an object file
+src/pickdown_food_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_food_action_node.dir/build.make CMakeFiles/pickdown_food_action_node.dir/src/pickdown_food_action_node.cpp.o
+.PHONY : src/pickdown_food_action_node.cpp.o
+
+src/pickdown_food_action_node.i: src/pickdown_food_action_node.cpp.i
+.PHONY : src/pickdown_food_action_node.i
+
+# target to preprocess a source file
+src/pickdown_food_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_food_action_node.dir/build.make CMakeFiles/pickdown_food_action_node.dir/src/pickdown_food_action_node.cpp.i
+.PHONY : src/pickdown_food_action_node.cpp.i
+
+src/pickdown_food_action_node.s: src/pickdown_food_action_node.cpp.s
+.PHONY : src/pickdown_food_action_node.s
+
+# target to generate assembly for a file
+src/pickdown_food_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_food_action_node.dir/build.make CMakeFiles/pickdown_food_action_node.dir/src/pickdown_food_action_node.cpp.s
+.PHONY : src/pickdown_food_action_node.cpp.s
+
+src/pickdown_medicine_action_node.o: src/pickdown_medicine_action_node.cpp.o
+.PHONY : src/pickdown_medicine_action_node.o
+
+# target to build an object file
+src/pickdown_medicine_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_medicine_action_node.dir/build.make CMakeFiles/pickdown_medicine_action_node.dir/src/pickdown_medicine_action_node.cpp.o
+.PHONY : src/pickdown_medicine_action_node.cpp.o
+
+src/pickdown_medicine_action_node.i: src/pickdown_medicine_action_node.cpp.i
+.PHONY : src/pickdown_medicine_action_node.i
+
+# target to preprocess a source file
+src/pickdown_medicine_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_medicine_action_node.dir/build.make CMakeFiles/pickdown_medicine_action_node.dir/src/pickdown_medicine_action_node.cpp.i
+.PHONY : src/pickdown_medicine_action_node.cpp.i
+
+src/pickdown_medicine_action_node.s: src/pickdown_medicine_action_node.cpp.s
+.PHONY : src/pickdown_medicine_action_node.s
+
+# target to generate assembly for a file
+src/pickdown_medicine_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_medicine_action_node.dir/build.make CMakeFiles/pickdown_medicine_action_node.dir/src/pickdown_medicine_action_node.cpp.s
+.PHONY : src/pickdown_medicine_action_node.cpp.s
+
+src/pickdown_tool_action_node.o: src/pickdown_tool_action_node.cpp.o
+.PHONY : src/pickdown_tool_action_node.o
+
+# target to build an object file
+src/pickdown_tool_action_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_tool_action_node.dir/build.make CMakeFiles/pickdown_tool_action_node.dir/src/pickdown_tool_action_node.cpp.o
+.PHONY : src/pickdown_tool_action_node.cpp.o
+
+src/pickdown_tool_action_node.i: src/pickdown_tool_action_node.cpp.i
+.PHONY : src/pickdown_tool_action_node.i
+
+# target to preprocess a source file
+src/pickdown_tool_action_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_tool_action_node.dir/build.make CMakeFiles/pickdown_tool_action_node.dir/src/pickdown_tool_action_node.cpp.i
+.PHONY : src/pickdown_tool_action_node.cpp.i
+
+src/pickdown_tool_action_node.s: src/pickdown_tool_action_node.cpp.s
+.PHONY : src/pickdown_tool_action_node.s
+
+# target to generate assembly for a file
+src/pickdown_tool_action_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickdown_tool_action_node.dir/build.make CMakeFiles/pickdown_tool_action_node.dir/src/pickdown_tool_action_node.cpp.s
+.PHONY : src/pickdown_tool_action_node.cpp.s
 
 src/put_item_in_box_action_node.o: src/put_item_in_box_action_node.cpp.o
 .PHONY : src/put_item_in_box_action_node.o
@@ -399,7 +547,11 @@ help:
 	@echo "... uninstall"
 	@echo "... load_box_action_node"
 	@echo "... move_robot_action_node"
+	@echo "... pick_item_from_box_action_node"
 	@echo "... pick_up_item_from_location_action_node"
+	@echo "... pickdown_food_action_node"
+	@echo "... pickdown_medicine_action_node"
+	@echo "... pickdown_tool_action_node"
 	@echo "... put_item_in_box_action_node"
 	@echo "... unload_box_action_node"
 	@echo "... src/load_box_action_node.o"
@@ -408,9 +560,21 @@ help:
 	@echo "... src/move_robot_action_node.o"
 	@echo "... src/move_robot_action_node.i"
 	@echo "... src/move_robot_action_node.s"
+	@echo "... src/pick_item_from_box_action_node.o"
+	@echo "... src/pick_item_from_box_action_node.i"
+	@echo "... src/pick_item_from_box_action_node.s"
 	@echo "... src/pick_up_item_from_location_action_node.o"
 	@echo "... src/pick_up_item_from_location_action_node.i"
 	@echo "... src/pick_up_item_from_location_action_node.s"
+	@echo "... src/pickdown_food_action_node.o"
+	@echo "... src/pickdown_food_action_node.i"
+	@echo "... src/pickdown_food_action_node.s"
+	@echo "... src/pickdown_medicine_action_node.o"
+	@echo "... src/pickdown_medicine_action_node.i"
+	@echo "... src/pickdown_medicine_action_node.s"
+	@echo "... src/pickdown_tool_action_node.o"
+	@echo "... src/pickdown_tool_action_node.i"
+	@echo "... src/pickdown_tool_action_node.s"
 	@echo "... src/put_item_in_box_action_node.o"
 	@echo "... src/put_item_in_box_action_node.i"
 	@echo "... src/put_item_in_box_action_node.s"

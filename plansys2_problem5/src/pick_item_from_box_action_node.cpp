@@ -25,7 +25,7 @@ using namespace std::chrono_literals;
 class PickFromBox : public plansys2::ActionExecutorClient
 {
 public:
-  MoveRobot()// changed here
+  PickFromBox()// changed here
   : plansys2::ActionExecutorClient("pickfrombox", 250ms)// changed here
   {
     progress_ = 0.0;
