@@ -25,7 +25,7 @@ class Pickup_Item_From_Location : public plansys2::ActionExecutorClient// name o
 {
 public:
   Pickup_Item_From_Location()// changed here
-  : plansys2::ActionExecutorClient("pickup_item_from_location", 250ms)// changed here
+  : plansys2::ActionExecutorClient("pickup_item_from_location", 300ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -34,7 +34,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.02;
+      progress_ += 0.10;
       send_feedback(progress_, "Pickup Item From Location running");// changed here
     } else {
       finish(true, 1.0, "Pickup Item From Location completed");// changed here
