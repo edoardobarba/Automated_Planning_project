@@ -50,6 +50,14 @@ def generate_launch_description():
         namespace=namespace,
         output='screen',
         parameters=[])
+
+    move_robot_cmd2 = Node(
+        package='plansys2_problem5',
+        executable='move_robot_action_node2',
+        name='move_robot_action_node2',
+        namespace=namespace,
+        output='screen',
+        parameters=[])
     
     load_box_cmd = Node(
         package='plansys2_problem5',
@@ -121,6 +129,7 @@ def generate_launch_description():
     ld.add_action(plansys2_cmd)
     # to be modified
     ld.add_action(move_robot_cmd)
+    ld.add_action(move_robot_cmd2)
     ld.add_action(load_box_cmd)
     ld.add_action(unload_box_cmd)
     ld.add_action(pickup_item_from_location_cmd)

@@ -22,6 +22,11 @@ set(dependencies
 
 add_executable(move_robot_action_node src/move_robot_action_node.cpp)
 ament_target_dependencies(move_robot_action_node ${dependencies})
+
+add_executable(move_robot_action_node2 src/move_robot_action_node.cpp)
+ament_target_dependencies(move_robot_action_node2 ${dependencies})
+
+
 # Mostafa Part START
 ## load_box_action_node
 add_executable(load_box_action_node src/load_box_action_node.cpp)
@@ -29,6 +34,7 @@ ament_target_dependencies(load_box_action_node ${dependencies})
 ## unload_box_action_node
 add_executable(unload_box_action_node src/unload_box_action_node.cpp)
 ament_target_dependencies(unload_box_action_node ${dependencies})
+
 ## pick_up_item_from_location_action_node
 add_executable(pick_up_item_from_location_action_node src/pick_up_item_from_location_action_node.cpp)
 ament_target_dependencies(pick_up_item_from_location_action_node ${dependencies})
@@ -59,6 +65,7 @@ install(DIRECTORY launch pddl DESTINATION share/${PROJECT_NAME})
 
 install(TARGETS
   move_robot_action_node
+  move_robot_action_node2
   pick_item_from_box_action_node
   pickdown_food_action_node
   pickdown_medicine_action_node
