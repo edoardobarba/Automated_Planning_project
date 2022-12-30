@@ -26,7 +26,7 @@ class MoveRobot : public plansys2::ActionExecutorClient
 {
 public:
   MoveRobot()// changed here
-  : plansys2::ActionExecutorClient("move_robot", 250ms)// changed here
+  : plansys2::ActionExecutorClient("move_robot", 5000ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -35,7 +35,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.02;
+      progress_ += 0.01;
       send_feedback(progress_, "Move Robot running");// changed here
     } else {
       finish(true, 1.0, "Move Robot completed");// changed here

@@ -25,7 +25,7 @@ class Put_Item_In_box : public plansys2::ActionExecutorClient// name of the clas
 {
 public:
   Put_Item_In_box()// changed here
-  : plansys2::ActionExecutorClient("put_item_in_box", 250ms)// changed here
+  : plansys2::ActionExecutorClient("put_item_in_box", 300ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -34,7 +34,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.02;
+      progress_ += 0.10;
       send_feedback(progress_, "Put Item In Box running");// changed here
     } else {
       finish(true, 1.0, "Put Item In Box completed");// changed here

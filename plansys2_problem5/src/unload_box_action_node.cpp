@@ -25,7 +25,7 @@ class UnloadBox : public plansys2::ActionExecutorClient// name of the class
 {
 public:
   UnloadBox()// changed here
-  : plansys2::ActionExecutorClient("unload_box", 250ms)// changed here
+  : plansys2::ActionExecutorClient("unload_box", 500ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -34,7 +34,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.02;
+      progress_ += 0.05;
       send_feedback(progress_, "Unload Box running");// changed here
     } else {
       finish(true, 1.0, "Unload Robot completed");// changed here

@@ -38,7 +38,7 @@ Skip EHC: go straight to best-first search
 planutils run tfd domain4.pddl problem4.pddl
 No particular flags supported
 
-move_robot 15 seconds
+move_robot 50 seconds
 load_box 5 seconds 
 unload_box 5 seconds
 pickup_item_from_location 3 seconds
