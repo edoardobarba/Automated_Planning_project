@@ -25,7 +25,7 @@ class LoadBox : public plansys2::ActionExecutorClient// name of the class
 {
 public:
   LoadBox()// changed here
-  : plansys2::ActionExecutorClient("loadbox", 250ms)// changed here
+  : plansys2::ActionExecutorClient("load_box", 250ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -44,7 +44,7 @@ private:
     }
 
     std::cout << "\r\e[K" << std::flush;
-    std::cout << "Moving ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
+    std::cout << "Loading box ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
       std::flush;
   }
 
@@ -56,7 +56,7 @@ int main(int argc, char ** argv)
   rclcpp::init(argc, argv);
   auto node = std::make_shared<LoadBox>();// changed here
 
-  node->set_parameter(rclcpp::Parameter("action_name", "loadbox"));// changed here
+  node->set_parameter(rclcpp::Parameter("action_name", "load_box"));// changed here
   node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
 
   rclcpp::spin(node->get_node_base_interface());

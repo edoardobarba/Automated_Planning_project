@@ -26,7 +26,7 @@ class MoveRobot : public plansys2::ActionExecutorClient
 {
 public:
   MoveRobot()// changed here
-  : plansys2::ActionExecutorClient("moverobot", 250ms)// changed here
+  : plansys2::ActionExecutorClient("move_robot", 250ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -45,7 +45,7 @@ private:
     }
 
     std::cout << "\r\e[K" << std::flush;
-    std::cout << "Moving ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
+    std::cout << "Moving the robot ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
       std::flush;
   }
 
@@ -57,7 +57,7 @@ int main(int argc, char ** argv)
   rclcpp::init(argc, argv);
   auto node = std::make_shared<MoveRobot>();// changed here
 
-  node->set_parameter(rclcpp::Parameter("action_name", "moverobot"));// changed here
+  node->set_parameter(rclcpp::Parameter("action_name", "move_robot"));// changed here
   node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
 
   rclcpp::spin(node->get_node_base_interface());

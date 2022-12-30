@@ -26,7 +26,7 @@ class PickdownTool : public plansys2::ActionExecutorClient
 {
 public:
   PickdownTool()// changed here
-  : plansys2::ActionExecutorClient("pickdowntool", 250ms)// changed here
+  : plansys2::ActionExecutorClient("pickdown_tool", 250ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -45,7 +45,7 @@ private:
     }
 
     std::cout << "\r\e[K" << std::flush;
-    std::cout << "Pickdown tool ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
+    std::cout << "Putting down the  tool ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
       std::flush;
   }
 
@@ -57,7 +57,7 @@ int main(int argc, char ** argv)
   rclcpp::init(argc, argv);
   auto node = std::make_shared<PickdownTool>();// changed here
 
-  node->set_parameter(rclcpp::Parameter("action_name", "pickdowntool"));// changed here
+  node->set_parameter(rclcpp::Parameter("action_name", "pickdown_tool"));// changed here
   node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
 
   rclcpp::spin(node->get_node_base_interface());

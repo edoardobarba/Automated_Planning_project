@@ -25,7 +25,7 @@ class Put_Item_In_box : public plansys2::ActionExecutorClient// name of the clas
 {
 public:
   Put_Item_In_box()// changed here
-  : plansys2::ActionExecutorClient("putiteminbox", 250ms)// changed here
+  : plansys2::ActionExecutorClient("put_item_in_box", 250ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -44,7 +44,7 @@ private:
     }
 
     std::cout << "\r\e[K" << std::flush;
-    std::cout << "Moving ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
+    std::cout << "Putting item in box ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
       std::flush;
   }
 
@@ -56,7 +56,7 @@ int main(int argc, char ** argv)
   rclcpp::init(argc, argv);
   auto node = std::make_shared<Put_Item_In_box>();// changed here
 
-  node->set_parameter(rclcpp::Parameter("action_name", "putiteminbox"));// changed here
+  node->set_parameter(rclcpp::Parameter("action_name", "put_item_in_box"));// changed here
   node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
 
   rclcpp::spin(node->get_node_base_interface());

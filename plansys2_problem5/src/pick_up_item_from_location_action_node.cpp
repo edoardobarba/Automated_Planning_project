@@ -25,7 +25,7 @@ class Pickup_Item_From_Location : public plansys2::ActionExecutorClient// name o
 {
 public:
   Pickup_Item_From_Location()// changed here
-  : plansys2::ActionExecutorClient("pickupitemfromlocation", 250ms)// changed here
+  : plansys2::ActionExecutorClient("pickup_item_from_location", 250ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -44,7 +44,7 @@ private:
     }
 
     std::cout << "\r\e[K" << std::flush;
-    std::cout << "Moving ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
+    std::cout << "Picking up item from location ... [" << std::min(100.0, progress_ * 100.0) << "%]  " <<
       std::flush;
   }
 
@@ -56,7 +56,7 @@ int main(int argc, char ** argv)
   rclcpp::init(argc, argv);
   auto node = std::make_shared<Pickup_Item_From_Location>();// changed here
 
-  node->set_parameter(rclcpp::Parameter("action_name", "pickupitemfromlocation"));// changed here
+  node->set_parameter(rclcpp::Parameter("action_name", "pickup_item_from_location"));// changed here
   node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
 
   rclcpp::spin(node->get_node_base_interface());
