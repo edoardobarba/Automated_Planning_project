@@ -30,14 +30,14 @@
 
     (:action move_robot_with_box 
       :parameters (?r - robot ?from ?to - location ?c - crane ?b - box)
-      :precondition (and (at_r ?r ?from) (holding_box ?c ?b))
+      :precondition (and (at_r ?r ?from) (holding_box ?c ?b) (not (at_r ?r ?to)))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
             )
 
     (:action move_robot_without_box
       :parameters (?r - robot ?from ?to - location ?c - crane)
-      :precondition (and (at_r ?r ?from) (is_empty_c ?c))
+      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (not (at_r ?r ?to)))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
             )

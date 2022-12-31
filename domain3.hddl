@@ -274,9 +274,9 @@
   ;; TODO add in other files the last condition that robot is not at to
   (:action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
-      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r)(not (at_r ?r ?to)))
+      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r) (not (at_r ?r ?to)))
       :effect (and (at_r ?r ?to)
-                (not (at_r ?r ?from)))
+              (not (at_r ?r ?from)))
     )
 
   (:action load_box

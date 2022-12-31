@@ -10,7 +10,7 @@ planutils run lama "domain2.pddl problem2.pddl"
 
 
 
-
+PROBLEM 2
 https://sites.google.com/view/enhsp/home/how-to-use-it?authuser=0
 
 java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner opt-hlm
@@ -18,6 +18,7 @@ java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner o
 BEST PLANNER EVER
 java -jar enhsp-dist/enhsp.jar -o ../domain2.pddl -f ../problem2.pddl -planner opt-hmax
 
+PROBLEM 3
 For pandas command 
 java -jar PANDA.jar -parser hddl domain3.hddl problem3.hddl 
 

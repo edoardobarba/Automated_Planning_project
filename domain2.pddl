@@ -34,7 +34,7 @@
     )
 
     (:functions 
-      (max_capacity_carrier) ;max capacity of carrier
+      (max_capacity_carrier ?a - carrier) ;max capacity of carrier
       (max_capacity_box) ;max capacity of box
       (box_count ?c - carrier) ;number of boxes on the carrier c
       (item_count ?b - box) ;number of items on the box b
@@ -42,7 +42,7 @@
 
     (:action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
-      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r))
+      :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r) (not (at_r ?r ?to)))
       :effect (and (at_r ?r ?to)
                 (not (at_r ?r ?from)))
             )
@@ -50,7 +50,7 @@
     ;; TODO capacity of carrier
     (:action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
-      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (< (box_count ?a) (max_capacity_carrier))) 
+      :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (< (box_count ?a) (max_capacity_carrier ?a))) 
       :effect (and (not(at_b ?b ?l)) (on ?b ?a) (increase (box_count ?a) 1))
     )
 

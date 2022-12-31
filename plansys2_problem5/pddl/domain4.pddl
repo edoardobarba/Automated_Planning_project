@@ -34,7 +34,7 @@
     )
 
     (:functions 
-      (max_capacity_carrier) 
+      (max_capacity_carrier ?a - carrier) 
       (max_capacity_box) 
       (box_count ?c - carrier) 
       (item_count ?b - box) 
@@ -59,7 +59,7 @@
                       ( over all (belongs_crane ?c ?r)) 
                       ( over all (belongs_carrier ?a ?r)) 
                       ( at start (is_empty_c ?c))  
-                      ( at start (< (box_count ?a) (max_capacity_carrier)))
+                      ( at start (< (box_count ?a) (max_capacity_carrier ?a)))
                   ) 
       :effect (and ( at start (not(at_b ?b ?l))) 
                    ( at end   (on ?b ?a)) 

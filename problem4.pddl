@@ -26,7 +26,8 @@
 (:init
     (= (box_count a1) 0)
     (= (box_count a2) 0)
-    (= (max_capacity_carrier) 2)
+    (= (max_capacity_carrier a1) 2)
+    (= (max_capacity_carrier a2) 1)
     (= (item_count b1) 0)
     (= (item_count b2) 0)
     ; (= (item_count b3) 0)
