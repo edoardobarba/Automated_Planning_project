@@ -25,7 +25,7 @@ class LoadBox : public plansys2::ActionExecutorClient// name of the class
 {
 public:
   LoadBox()// changed here
-  : plansys2::ActionExecutorClient("load_box", 500ms)// changed here
+  : plansys2::ActionExecutorClient("load_box", 400ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -34,7 +34,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.05;
+      progress_ += 0.1;
       send_feedback(progress_, "Load Box running");// changed here
     } 
     else {

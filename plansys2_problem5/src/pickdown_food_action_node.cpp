@@ -26,7 +26,7 @@ class PickdownFood : public plansys2::ActionExecutorClient
 {
 public:
   PickdownFood()// changed here
-  : plansys2::ActionExecutorClient("pickdown_food", 300ms)// changed here
+  : plansys2::ActionExecutorClient("pickdown_food", 400ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -35,7 +35,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.10;
+      progress_ += 0.17;
       send_feedback(progress_, "Pickdown food running");// changed here
     } else {
       finish(true, 1.0, "Pickdown food completed");// changed here

@@ -26,7 +26,7 @@ class PickFromBox : public plansys2::ActionExecutorClient
 {
 public:
   PickFromBox()// changed here
-  : plansys2::ActionExecutorClient("pick_item_from_box",300ms)// changed here
+  : plansys2::ActionExecutorClient("pick_item_from_box",400ms)// changed here
   {
     progress_ = 0.0;
   }
@@ -35,7 +35,7 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.10;
+      progress_ += 0.17;
       send_feedback(progress_, "Pick item from box running");// changed here
     } else {
       finish(true, 1.0, "Pick item from box completed");// changed here

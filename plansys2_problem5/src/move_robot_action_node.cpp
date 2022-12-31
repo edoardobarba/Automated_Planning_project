@@ -26,7 +26,7 @@ class MoveRobot : public plansys2::ActionExecutorClient
 {
 public:
   MoveRobot()// changed here
-  : plansys2::ActionExecutorClient("move_robot", 5000ms)// changed here
+  : plansys2::ActionExecutorClient("move_robot", 400ms)// changed here
   {
     progress_ = 0.0;
   }
