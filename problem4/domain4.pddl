@@ -11,9 +11,7 @@
     )
 
     (:predicates 
-        
-        (is_truck ?r - r) ;; robot r is a truck
-        (is_helicopter ?r - r) ;; robot r is an helicopter   
+          
         (belongs_carrier ?a - carrier ?r - robot)   ;; carrier c belongs to robot r
         (belongs_crane ?c - crane ?r - robot)   ;; crane c belongs to robot r
         (on ?b - box ?a - carrier)  ;; box b is on carrier c

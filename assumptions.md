@@ -1,7 +1,44 @@
 Assumptions
     -the boxes have a capacity --> 10 objects
     -in order to put down an object, the robot has to put down the box
-    -the robot can contain only one box at a time
+    -
+Problem 1 assumtions
+* robots need to use a box to move things from 1 place to another
+* the robot can contain only one box at a time
+* in order to put down an object, the robot has to put down the box
+* We assume that the box has unlimited capacity
+* we have no constrains on resuing the boxes
+* number of boxes are defind in the problem instance and the planner need to find best plan using the available boxes
+Problem 1 examples
+* two persons different locations with needs of medicine food and tools with 2 box.
+* think about it for the next problems maybe.
+Problem 2 assumtions
+* all the boxes have the same capacity that we will define
+* each carrier has its own capacity
+* we have a single type of robot but the only difference between the robots is the capcity so you can have robot
+with larger capacity than the other.
+Problem 2 examples
+* we want to tackle that we have different carrrier capacity. 
+Problem 3 assumtions
+* we cannot use fluents with pandas that there is no capacity for either for capciy or the box
+* carrier can contain only 1 box
+* the boxxes has unlimited capcity
+Problem 3 examples
+* two persons different locations with needs of medicine food and tools with 2 box.
+* think about it for the next problems maybe.
+* show the different ways of defining the goal. 
+Problem 4 assumtions
+* we do a table of the duration of each action 
+* 
+Problem 4 examples
+* we can to try to see that there are actiosn that can be run in parralal 
+
+Problem 5 assumtions
+* the values that we wrote in the code
+* there is a node for each action for 2 robots and adding more robots require modificaiton in the cmake file
+Problem 5 examples
+* we can to try to see that there are actiosn that can be run in parralal 
+
 
 
 planutils run lama "domain2.pddl problem2.pddl"
