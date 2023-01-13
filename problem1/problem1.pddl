@@ -43,7 +43,7 @@
     (need_food p2)
     (need_medicine p2)
     (need_tool p2)
-    (is_empty_b b1)
+    ; (is_empty_b b1)
     (is_empty_c c1)
 )
 
