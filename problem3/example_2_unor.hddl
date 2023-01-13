@@ -3,8 +3,11 @@
 	(:domain  domain3)
 	(:objects
     r1 - robot
+    r2 - robot
     c1 - crane
+    c2 - crane
     a1 - carrier
+    a2 - carrier
     p1 - person
     i2 - item
     i3 - item
@@ -17,16 +20,16 @@
 	(:htn
 		:parameters ()
 		:subtasks (and  (   task0  (deliver_tool r1 p1)         )
-                        (   task1  (deliver_medicine r1 p1)     )
+                        (   task1  (deliver_medicine r2 p1)     )
         )
-        :ordering (and  (task0 < task1)
-                        (task1 < task2)
-		)
 	)
 	(:init
         (belongs_crane c1 r1)
         (belongs_carrier a1 r1)
+        (belongs_crane c2 r2)
+        (belongs_carrier a2 r2)
         (at_r r1 l1)
+        (at_r r2 l1)
         (at_b b1 l1)
         (at_b b2 l1)
         (at_i i2 l1)
@@ -37,5 +40,7 @@
         (need_medicine p1)
         (need_tool p1)
         (is_empty_c c1)
+        (is_empty_c c2)
+
 	)
 )
