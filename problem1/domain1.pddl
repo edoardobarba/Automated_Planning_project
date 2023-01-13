@@ -10,8 +10,8 @@
     )
 ; push from container
     (:predicates 
-        (is_empty_b ?b - box) ;; box b is empty
-        (is_full ?b - box) ;; box b is full
+        ; (is_empty_b ?b - box) ;; box b is empty
+        ; (is_full ?b - box) ;; box b is full
         (at_b ?b - box ?l - location) ;; box b is at location l 
         (at_p ?p - person ?l - location) ;; person p is at location l
         (at_r ?r - robot ?l - location) ;; robot r is at location l

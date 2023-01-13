@@ -12,8 +12,8 @@
 
     (:predicates 
         
-        (is_truck ?r - r) ;; robot r is a truck
-        (is_helicopter ?r - r) ;; robot r is an helicopter   
+        ; (is_truck ?r - r) ;; robot r is a truck
+        ; (is_helicopter ?r - r) ;; robot r is an helicopter   
         (belongs_carrier ?a - carrier ?r - robot)   ;; carrier c belongs to robot r
         (belongs_crane ?c - crane ?r - robot)   ;; crane c belongs to robot r
         (on ?b - box ?a - carrier)  ;; box b is on carrier c
@@ -23,7 +23,7 @@
         (at_i ?i - item ?l - location)  ;; item i is at location i
         (inside ?i - item ?b - box)   ;; item i is inside box b
         (is_empty_c ?c - crane) ;; crane c is empty
-        (holding_box ?c - crane ?b - box) ;; crane c holds box b
+        ; (holding_box ?c - crane ?b - box) ;; crane c holds box b
         (holding_item ?c - crane ?i - item)
         (is_food ?i - item) ;; item i is food
         (is_medicine ?i - item) ;; item i is medicine

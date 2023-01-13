@@ -23,7 +23,7 @@
         (at_i ?i - item ?l - location)  ;; item i is at location i
         (inside ?i - item ?b - box)   ;; item i is inside box b
         (is_empty_c ?c - crane) ;; crane c is empty
-        (holding_box ?c - crane ?b - box) ;; crane c holds box b
+        ; (holding_box ?c - crane ?b - box) ;; crane c holds box b
         (holding_item ?c - crane ?i - item)
         (is_food ?i - item) ;; item i is food
         (is_medicine ?i - item) ;; item i is medicine
