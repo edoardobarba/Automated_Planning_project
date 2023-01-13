@@ -148,7 +148,19 @@
         (task1 < task2)
       )
     )
-    
+    (:method m_catch_item_put_in_box_2
+      :parameters (?b - box ?l1 - location ?l2 - location ?r - robot ?i - item)
+      :task (catch_item_put_in_box ?b ?i)
+      :subtasks (and
+      (task0 (deliver_box ?b ?l2 ?l1)); so we do task goto to location 1
+      (task1 (pick_up_item_from_location ?r ?l1))
+      (task2 (put_down_item_in_box ?r ?b))
+      )
+      :ordering (and
+        (task0 < task1)
+        (task1 < task2)
+      )
+    )
     (:method m_deliver_food
       :parameters (?b - box  ?i - item ?l1 - location ?l2 - location ?r - robot ?p - person)
       :task (deliver_food ?r ?p)
@@ -299,14 +311,14 @@
 
   (:action put_item_in_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
-      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l) (belongs_crane ?c ?r) );(< (item_count ?b) (max_capacity_box)))
-      :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (is_empty_c ?c) (not(holding_item ?c ?i)) )
+      :precondition (and (holding_item ?c ?i) (at_b ?b ?l) (at_r ?r ?l) (belongs_crane ?c ?r))
+      :effect (and (inside ?i ?b) (not(at_i ?i ?l)) (is_empty_c ?c) (not(holding_item ?c ?i)))
     )
 
   (:action pick_item_from_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
       :precondition (and (at_b ?b ?l) (at_r ?r ?l) (is_empty_c ?c) (inside ?i ?b) (belongs_crane ?c ?r))
-      :effect (and (holding_item ?c ?i) (not (inside ?i ?b)) (not(is_empty_c ?c)) )
+      :effect (and (holding_item ?c ?i) (not (inside ?i ?b)) (not(is_empty_c ?c)))
     )
 
   (:action pickdown_food
