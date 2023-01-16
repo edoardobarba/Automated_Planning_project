@@ -12,6 +12,7 @@ Problem 1 assumtions
 Problem 1 examples
 * two persons different locations with needs of medicine food and tools with 2 box.
 * think about it for the next problems maybe.
+
 Problem 2 assumtions
 * all the boxes have the same capacity that we will define
 * each carrier has its own capacity
@@ -19,6 +20,7 @@ Problem 2 assumtions
 with larger capacity than the other.
 Problem 2 examples
 * we want to tackle that we have different carrrier capacity. 
+
 Problem 3 assumtions
 * we cannot use fluents with pandas that there is no capacity for either for capciy or the box
 * carrier can contain only 1 box

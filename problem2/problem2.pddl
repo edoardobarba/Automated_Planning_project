@@ -7,7 +7,7 @@
     a1 - carrier
     a2 - carrier
     p1 - person
-    ;p2 - person
+    p2 - person
     i1 - item
     i2 - item
     i3 - item
@@ -47,7 +47,7 @@
     ; (at_i i5 l1)
     ; (at_i i6 l1)
     (at_p p1 l2)
-    ; (at_p p2 l3)
+    (at_p p2 l3)
     (is_food i1)
     (is_medicine i2)
     (is_tool i3)
@@ -56,10 +56,10 @@
     ; (is_tool i6)
     (need_food p1)
     (need_medicine p1)
-    (need_tool p1)
+    ;(need_tool p1)
     ;(need_food p2)
     ;(need_medicine p2)
-    ; (need_tool p2)
+    (need_tool p2)
     (is_empty_c c1)
     (is_empty_c c2)
 )
@@ -67,10 +67,11 @@
 (:goal  (and
             (not(need_food p1))
             (not(need_medicine p1))
-            (not(need_tool p1))
+            (not(need_tool p2))
+            ;(not(need_tool p1))
             ;(not(need_food p2))
             ;(not(need_medicine p2))
-            ;; (not(need_tool p2)) 
+            ;(not(need_tool p2)) 
         ) 
 ) 
 ) 
