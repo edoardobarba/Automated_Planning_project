@@ -2,6 +2,12 @@
 
 ## Problem 1 Commands
 ### planer 1
+We used planutils and downward. 
+
+planutils run ff domain1.pddl problem1_instance2.pddl 
+planutils run ff domain1.pddl problem1_instance2.pddl 
+
+./fast-downward.py ../domain1.pddl ../problem1_instance2.pddl --search "astar(goalcount)"
 
 ### planer 2
 

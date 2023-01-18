@@ -1,5 +1,5 @@
 (define (domain domain1)
-    (:requirements :strips :typing:negative-preconditions)
+    (:requirements :strips :typing :negative-preconditions)
     (:types 
         person 
         robot 
