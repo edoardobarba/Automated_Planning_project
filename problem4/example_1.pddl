@@ -13,7 +13,6 @@
     i3 - item
     b1 - box
     b2 - box
-    ; b3 - box
     l1 - location 
     l2 - location 
     l3 - location   
@@ -26,7 +25,6 @@
     (= (max_capacity_carrier a2) 1)
     (= (item_count b1) 0)
     (= (item_count b2) 0)
-    ; (= (item_count b3) 0)
     (= (max_capacity_box) 1) 
     (belongs_crane c1 r1)
     (belongs_crane c2 r2)
@@ -36,7 +34,6 @@
     (at_r r2 l1)
     (at_b b1 l1)
     (at_b b2 l1)
-    ; (at_b b3 l1)
     (at_i i1 l1)
     (at_i i3 l1)
     (at_p p1 l2)
