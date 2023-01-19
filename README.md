@@ -32,20 +32,20 @@ java -jar PANDA.jar -parser hddl domain3.hddl example_2_unor.hddl
 ```
 
 ## Problem 4 Commands
-### planer 1
+### Command 1
 ```bash
 planutils run optic "-N  domain4.pddl example_1.pddl" >> example_1_p1.txt
 planutils run optic "-N  domain4.pddl example_2.pddl" >> example_2_p1.txt
 
 ```
 
-### planer 2
+### Command 2
 ```bash
 planutils run optic "-N -W1,1 domain4.pddl example_1.pddl" >> example_1_p2.txt
 planutils run optic "-N -W1,1 domain4.pddl example_2.pddl" >> example_2_p2.txt
 
 ```
-### planer 3
+### Command 3
 ```bash
 planutils run optic "-N -E -W1,1 domain4.pddl example_1.pddl" >> example_1_p3.txt
 planutils run optic "-N -E -W1,1 domain4.pddl example_2.pddl" >> example_2_p3.txt
