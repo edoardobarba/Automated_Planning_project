@@ -1,9 +1,63 @@
 # Automated_Planning_project
 This repository is a student project developed by Edoardo Barbara and Mostafa Haggag for the "Automated Planning: Theory and Practical" course of the Master in Artificial Intelligent Systems at the University of Trento, a.y. 2022-2023.
 ## Format
-This repo contains the following file:
-We should run the tree command on the github to see everything. PLEASE REMEBER
+Automated_Planning_project/
+├── assignment.pdf
+├── plansys2_problem5
+│   ├── CMakeLists.txt
+│   ├── launch
+│   │   ├── example_1
+│   │   ├── example_2
+│   │   └── plansys2_problem5_launch.py
+│   ├── package.xml
+│   ├── pddl
+│   │   └── domain4.pddl
+│   └── src
+│       ├── load_box_action_node.cpp
+│       ├── move_robot_action_node.cpp
+│       ├── pickdown_food_action_node.cpp
+│       ├── pickdown_medicine_action_node.cpp
+│       ├── pickdown_tool_action_node.cpp
+│       ├── pick_item_from_box_action_node.cpp
+│       ├── pick_up_item_from_location_action_node.cpp
+│       ├── put_item_in_box_action_node.cpp
+│       └── unload_box_action_node.cpp
+├── problem1
+│   ├── domain1.pddl
+│   ├── problem1_instance1.pddl
+│   ├── problem1_instance1.pddl.plan
+│   ├── problem1_instance2.pddl
+│   ├── problem1_instance2.pddl.plan
+│   ├── problem1_instance3.pddl
+│   └── sas_plan
+├── problem2
+│   ├── domain2.pddl
+│   ├── problem2_instance1.pddl
+│   └── problem2_instance2.pddl
+├── problem3
+│   ├── domain3.hddl
+│   ├── example_1.hddl
+│   ├── example_1.txt
+│   ├── example_1_unor.hddl
+│   ├── example_1_unor.txt
+│   ├── example_2.hddl
+│   ├── example_2.txt
+│   ├── example_2_unor.hddl
+│   └── example_2_unor.txt
+├── problem4
+│   ├── domain4.pddl
+│   ├── example_1_p1.txt
+│   ├── example_1_p2.txt
+│   ├── example_1_p3.txt
+│   ├── example_1.pddl
+│   ├── example_2_p1.txt
+│   ├── example_2_p2.txt
+│   ├── example_2_p3.txt
+│   └── example_2.pddl
+├── README.md
+└── report.pdf
 
+8 directories, 46 files
 ## Problem 1 Commands
 ### planer 1
 We used planutils and downward. 
