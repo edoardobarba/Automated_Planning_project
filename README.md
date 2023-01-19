@@ -1,6 +1,7 @@
 # Automated_Planning_project
 This repository is a student project developed by Edoardo Barbara and Mostafa Haggag for the "Automated Planning: Theory and Practical" course of the Master in Artificial Intelligent Systems at the University of Trento, a.y. 2022-2023.
 ## Format
+```bash
 Automated_Planning_project/
 ├── assignment.pdf
 ├── plansys2_problem5
@@ -58,6 +59,9 @@ Automated_Planning_project/
 └── report.pdf
 
 8 directories, 46 files
+```
+
+
 ## Problem 1 Commands
 ### planer 1
 We used planutils and downward. 
