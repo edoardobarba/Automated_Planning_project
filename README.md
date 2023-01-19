@@ -3,12 +3,21 @@ This repository is a student project developed by Edoardo Barbara and Mostafa Ha
 ## Format
 This repo contains the following file:
 We should run the tree command on the github to see everything. PLEASE REMEBER
+
 ## Problem 1 Commands
 ### planer 1
+We used planutils and downward. 
+
+planutils run ff domain1.pddl problem1_instance2.pddl 
+planutils run lama domain1.pddl problem1_instance2.pddl 
+planutils run lama-first domain1.pddl problem1_instance2.pddl 
+
+./fast-downward.py ../domain1.pddl ../problem1_instance2.pddl --search "astar(goalcount)"
 
 ### planer 2
 
 ## Problem 2 Commands
+
 
 ## Problem 3 Commands
 * Put the planner PANADAS in the directory of problem 3. 
