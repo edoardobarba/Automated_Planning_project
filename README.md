@@ -1,6 +1,7 @@
 # Automated_Planning_project
 This repository is a student project developed by Edoardo Barbara and Mostafa Haggag for the "Automated Planning: Theory and Practical" course of the Master in Artificial Intelligent Systems at the University of Trento, a.y. 2022-2023.
 ## Format
+In this section we describe how the files are organised for the repository. Please find the tree below.
 ```bash
 Automated_Planning_project/
 ├── assignment.pdf
