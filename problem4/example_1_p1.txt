@@ -1,4 +1,4 @@
-;Number of literals: 47
+Number of literals: 32
 Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
 Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
 No semaphore facts found, returning
@@ -6,33 +6,16 @@ Have identified that smaller values of (box_count a1) are preferable
 Have identified that smaller values of (box_count a2) are preferable
 Have identified that smaller values of (item_count b1) are preferable
 Have identified that smaller values of (item_count b2) are preferable
-Have identified that smaller values of (item_count b3) are preferable
 [01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-55% of the ground temporal actions in this problem are compression-safe
-Initial heuristic = 11.000, admissible cost estimate 0.000
-
-Resorting to best-first search
-Running WA* with W = 1.000, not restarting with goal states
-b (10.000 | 66.002)b (9.000 | 69.003)b (8.000 | 72.004)b (7.000 | 72.004)b (7.000 | 72.003)
-;Number of literals: 39
-Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-No semaphore facts found, returning
-Have identified that smaller values of (box_count a1) are preferable
-Have identified that smaller values of (box_count a2) are preferable
-Have identified that smaller values of (item_count b1) are preferable
-Have identified that smaller values of (item_count b2) are preferable
-Have identified that smaller values of (item_count b3) are preferable
-[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-56% of the ground temporal actions in this problem are compression-safe
+95% of the ground temporal actions in this problem are compression-safe
 Initial heuristic = 8.000, admissible cost estimate 0.000
 
 Resorting to best-first search
 Running WA* with W = 5.000, not restarting with goal states
 b (7.000 | 66.002)b (6.000 | 69.003)b (5.000 | 72.004)b (4.000 | 72.004)b (3.000 | 166.003)b (2.000 | 169.004)b (1.000 | 172.005)(G);;;; Solution Found
-; States evaluated: 67968
+; States evaluated: 6546
 ; Cost: 172.005
-; Time 21.46
+; Time 1.78
 0.000: (move_robot r1 l1 l2 c1)  [50.000]
 0.000: (pickup_item_from_location i3 l1 c2 r2)  [3.000]
 3.001: (put_item_in_box i3 b1 l1 c2 r2)  [3.000]
