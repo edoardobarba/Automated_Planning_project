@@ -67,36 +67,46 @@ Automated_Planning_project/
 ## Problem 1 Commands
 ### Instance 1
 We used planutils and downward. 
+```bash
 
 planutils run ff domain1.pddl problem1_instance1.pddl 
 planutils run lama domain1.pddl problem1_instance1.pddl 
 planutils run lama-first domain1.pddl problem1_instance1.pddl 
 ./DOWNWARD/fast-downward.py /domain1.pddl /problem1_instance1.pddl --search "astar(goalcount)"
+```
 
 ### Instance 2
 * Put the planner DOWNWARD in the directory of problem 1. 
 * Run these commands.
+```bash
 
 planutils run ff domain1.pddl problem1_instance2.pddl 
 planutils run lama domain1.pddl problem1_instance2.pddl 
 planutils run lama-first domain1.pddl problem1_instance2.pddl 
 ./DOWNWARD/fast-downward.py /domain1.pddl /problem1_instance2.pddl --search "astar(goalcount)"
 
+```
 
 
 ## Problem 2 Commands
 * Put the planner ENHSP in the directory of problem 1. 
 * Run these commands.
 ### Instance 1
+```bash
+
 java -jar ../ENHSP-Public-enhsp-20/enhsp-dist/enhsp.jar -o domain2.pddl -f problem2_instance1.pddl -planner sat-hadd
 java -jar ../ENHSP-Public-enhsp-20/enhsp-dist/enhsp.jar -o domain2.pddl -f problem2_instance1.pddl -planner opt-blind
 java -jar ../ENHSP-Public-enhsp-20/enhsp-dist/enhsp.jar -o domain2.pddl -f problem2_instance1.pddl -planner opt-hmax
+```
 
 ### Instance 2
+```bash
+
 java -jar ../ENHSP-Public-enhsp-20/enhsp-dist/enhsp.jar -o domain2.pddl -f problem2_instance2.pddl -planner sat-hadd
 java -jar ../ENHSP-Public-enhsp-20/enhsp-dist/enhsp.jar -o domain2.pddl -f problem2_instance2.pddl -planner opt-blind
 java -jar ../ENHSP-Public-enhsp-20/enhsp-dist/enhsp.jar -o domain2.pddl -f problem2_instance2.pddl -planner opt-hmax
 
+```
 
 ## Problem 3 Commands
 * Put the planner PANADAS in the directory of problem 3. 
