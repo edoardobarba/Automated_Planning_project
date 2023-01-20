@@ -267,7 +267,9 @@ time spent:    0.00 seconds instantiating 192 easy, 0 hard action templates
 
 
 #Lama-First
+
 planutils run lama-first domain1.pddl problem1_instance2.pddl 
+
 INFO     Running translator.
 INFO     translator stdin: None
 INFO     translator time limit: None
