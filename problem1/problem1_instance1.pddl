@@ -58,7 +58,3 @@
 
 )
 )
-;; planutils run downward "--alias lama-first domain1.pddl problem1.pddl"
-;; remove the "" if you donot need it 
-;un-comment the following line if metric is needed
-;(:metric minimize (???))

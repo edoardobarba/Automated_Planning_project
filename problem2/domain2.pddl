@@ -11,9 +11,6 @@
     )
 
     (:predicates 
-        
-        ; (is_truck ?r - r) ;; robot r is a truck
-        ; (is_helicopter ?r - r) ;; robot r is an helicopter   
         (belongs_carrier ?a - carrier ?r - robot)   ;; carrier c belongs to robot r
         (belongs_crane ?c - crane ?r - robot)   ;; crane c belongs to robot r
         (on ?b - box ?a - carrier)  ;; box b is on carrier c
@@ -23,7 +20,6 @@
         (at_i ?i - item ?l - location)  ;; item i is at location i
         (inside ?i - item ?b - box)   ;; item i is inside box b
         (is_empty_c ?c - crane) ;; crane c is empty
-        ; (holding_box ?c - crane ?b - box) ;; crane c holds box b
         (holding_item ?c - crane ?i - item)
         (is_food ?i - item) ;; item i is food
         (is_medicine ?i - item) ;; item i is medicine
@@ -33,21 +29,20 @@
         (need_tool ?p - person) ;; person p need tool
     )
 
-    (:functions 
-      (max_capacity_carrier ?a - carrier) ;max capacity of carrier
-      (max_capacity_box) ;max capacity of box
-      (box_count ?c - carrier) ;number of boxes on the carrier c
-      (item_count ?b - box) ;number of items on the box b
+    (:functions   
+        (max_capacity_carrier ?a - carrier) ;max capacity of carrier
+        (max_capacity_box) ;max capacity of box
+        (box_count ?c - carrier) ;number of boxes on the carrier c
+        (item_count ?b - box) ;number of items on the box b
     )
 
     (:action move_robot
       :parameters (?r - robot ?from ?to - location ?c - crane)
       :precondition (and (at_r ?r ?from) (is_empty_c ?c) (belongs_crane ?c ?r) (not (at_r ?r ?to)))
       :effect (and (at_r ?r ?to)
-                (not (at_r ?r ?from)))
+              (not (at_r ?r ?from)))
             )
 
-    ;; TODO capacity of carrier
     (:action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
       :precondition (and (at_r ?r ?l) (at_b ?b ?l) (belongs_crane ?c ?r) (belongs_carrier ?a ?r) (is_empty_c ?c) (< (box_count ?a) (max_capacity_carrier ?a))) 
