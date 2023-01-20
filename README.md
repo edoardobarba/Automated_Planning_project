@@ -27,15 +27,15 @@ Automated_Planning_project/
 ├── problem1
 │   ├── domain1.pddl
 │   ├── problem1_instance1.pddl
-│   ├── problem1_instance1.pddl.plan
+│   ├── problem1_instance1_results.md
 │   ├── problem1_instance2.pddl
-│   ├── problem1_instance2.pddl.plan
-│   ├── problem1_instance3.pddl
-│   └── sas_plan
+│   ├── problem1_instance2_results.md
 ├── problem2
 │   ├── domain2.pddl
 │   ├── problem2_instance1.pddl
-│   └── problem2_instance2.pddl
+│   ├── problem2_instance1_results.md
+│   ├── problem2_instance2.pddl
+│   └── problem2_instance2_results.md
 ├── problem3
 │   ├── domain3.hddl
 │   ├── example_1.hddl
@@ -59,7 +59,8 @@ Automated_Planning_project/
 ├── README.md
 └── report.pdf
 
-8 directories, 46 files
+8 directories, 47 files
+
 ```
 
 
