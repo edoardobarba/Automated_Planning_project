@@ -66,7 +66,7 @@ Automated_Planning_project/
 
 ## Problem 1 Commands
 ### Instance 1
-We used planutils and downward. 
+* We used planutils and downward. 
 ```bash
 
 planutils run ff domain1.pddl problem1_instance1.pddl 
