@@ -52,7 +52,6 @@
                    (at end   (at_r ?r ?to))
               )
     )
-    ;; TODO capacity of carrier
     (:durative-action load_box
       :parameters (?b - box ?r - robot ?c - crane ?l - location ?a - carrier )
       :duration (= ?duration 5);; last 5 time points
@@ -87,7 +86,6 @@
                      ( at end   (is_empty_c ?c)) 
                 )
     )
-    ;; Mostafa
     (:durative-action pickup_item_from_location
       :parameters (?i - item ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
@@ -101,7 +99,6 @@
                     ( at end   (holding_item ?c ?i))    
               )
     )
-    ;; Mostafa
     (:durative-action put_item_in_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
@@ -117,7 +114,6 @@
                      ( at start   (increase (item_count ?b) 1))
                 )
     )
-    ;; Mostafa
     (:durative-action pick_item_from_box
       :parameters (?i - item ?b - box ?l - location ?c - crane ?r - robot)
       :duration (= ?duration 3)
@@ -133,7 +129,6 @@
                    ( at start   (decrease (item_count ?b) 1))    
               )
     )
-    ;; edoardo
     (:durative-action pickdown_food
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :duration (= ?duration 3);; last 5 time points
@@ -154,7 +149,6 @@
     )
              
 	   				
-    ;; edoardo
 
     (:durative-action pickdown_tool
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
@@ -176,7 +170,6 @@
       )
       
 	)
-    ;; edoardo
     (:durative-action pickdown_medicine
       :parameters (?i - item ?l - location ?c - crane ?r - robot ?p - person)
       :duration (= ?duration 3)
