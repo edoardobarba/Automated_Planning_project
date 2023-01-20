@@ -30,7 +30,6 @@ Automated_Planning_project/
 │   ├── problem1_instance1_results.md
 │   ├── problem1_instance2.pddl
 │   ├── problem1_instance2_results.md
-│   └── sas_plan
 ├── problem2
 │   ├── domain2.pddl
 │   ├── problem2_instance1.pddl
