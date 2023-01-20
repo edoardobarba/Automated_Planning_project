@@ -126,6 +126,7 @@ ros2 launch plansys2_problem5 plansys2_problem5_launch.py
 ```
 * Run in the second terminal this command to run Plansys2 terminal
 ```bash
+source install/setup.bash
 ros2 run plansys2_terminal plansys2_terminal
 ```
 * In plansys2 terminal, run the following commands to run example 1:
