@@ -119,6 +119,7 @@ planutils run optic "-N -E -W1,1 domain4.pddl example_2.pddl" >> example_2_p3.tx
 source /opt/ros/humble/setup.bash
 source plansys2_ws/install/setup.bash
 colcon build --packages-select plansys2_problem5
+source install/setup.bash
 ```
 * Run in the first terminal this command to run the Python node:
 ```bash
@@ -126,7 +127,6 @@ ros2 launch plansys2_problem5 plansys2_problem5_launch.py
 ```
 * Run in the second terminal this command to run Plansys2 terminal
 ```bash
-source install/setup.bash
 ros2 run plansys2_terminal plansys2_terminal
 ```
 * In plansys2 terminal, run the following commands to run example 1:
